@@ -15,6 +15,9 @@
     "icon": "assets/minekea/icon.png",
     "environment": "*",
     "entrypoints": {
+        "fabric-datagen": [
+            "com.chimericdream.minekea.fabric.data.ModDataGenerator"
+        ],
         "main": [
             "com.chimericdream.minekea.fabric.MinekeaFabric"
         ],

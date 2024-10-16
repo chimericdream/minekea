@@ -17,3 +17,11 @@ dependencies {
 
     modImplementation "com.chimericdream.lib:chimericlib-common:${project.chimericlib_version}"
 }
+
+sourceSets {
+    main {
+        resources.srcDir 'src/main/generated'
+        // optional: exclude the datagen cache files from the mod jar
+        resources.exclude '.cache'
+    }
+}

@@ -35,4 +35,4 @@ run/
 # other
 
 .tmp
-src/main/generated/.cache
+common/src/main/generated/.cache
