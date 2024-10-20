@@ -1,0 +1,24 @@
+{
+  "values": [
+    "minekea:building/beams/acacia",
+    "minekea:building/beams/acacia_log",
+    "minekea:building/beams/birch",
+    "minekea:building/beams/birch_log",
+    "minekea:building/beams/cherry",
+    "minekea:building/beams/cherry_log",
+    "minekea:building/beams/crimson",
+    "minekea:building/beams/crimson_stem",
+    "minekea:building/beams/dark_oak",
+    "minekea:building/beams/dark_oak_log",
+    "minekea:building/beams/jungle",
+    "minekea:building/beams/jungle_log",
+    "minekea:building/beams/mangrove",
+    "minekea:building/beams/mangrove_log",
+    "minekea:building/beams/oak",
+    "minekea:building/beams/oak_log",
+    "minekea:building/beams/spruce",
+    "minekea:building/beams/spruce_log",
+    "minekea:building/beams/warped",
+    "minekea:building/beams/warped_stem"
+  ]
+}

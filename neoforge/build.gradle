@@ -40,7 +40,7 @@ dependencies {
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
 
-//    modImplementation "com.chimericdream.lib:chimericlib-neoforge:${rootProject.chimericlib_version}"
+    modImplementation "com.chimericdream.lib:chimericlib-neoforge:${rootProject.chimericlib_version}"
 }
 
 processResources {

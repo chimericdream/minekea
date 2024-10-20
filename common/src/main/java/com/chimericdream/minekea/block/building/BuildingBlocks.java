@@ -1,5 +1,6 @@
 package com.chimericdream.minekea.block.building;
 
+import com.chimericdream.minekea.block.building.beams.Beams;
 import com.chimericdream.minekea.block.building.general.BasaltBricksBlock;
 import com.chimericdream.minekea.block.building.general.ChiseledBasaltBricksBlock;
 import com.chimericdream.minekea.block.building.general.CrackedBasaltBricksBlock;
@@ -83,5 +84,7 @@ public class BuildingBlocks implements ModThingGroup {
         WAX_BLOCKS.put("pink", PINK_WAX_BLOCK);
 
         BLOCKS.addAll(WAX_BLOCKS.values());
+
+        BLOCKS.addAll(Beams.BLOCKS);
     }
 }
