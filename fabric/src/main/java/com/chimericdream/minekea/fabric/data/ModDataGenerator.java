@@ -1,7 +1,9 @@
 package com.chimericdream.minekea.fabric.data;
 
 import com.chimericdream.minekea.fabric.block.ModBlockDataGenerators;
+import com.chimericdream.minekea.fabric.item.ModItemDataGenerators;
 import com.chimericdream.minekea.fabric.util.BlockDataGeneratorGroup;
+import com.chimericdream.minekea.fabric.util.ItemDataGeneratorGroup;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -51,6 +53,10 @@ public class ModDataGenerator implements DataGeneratorEntrypoint {
                 group.configureRecipes(exporter);
             }
 
+            for (ItemDataGeneratorGroup group : ModItemDataGenerators.ITEM_GROUPS) {
+                group.configureRecipes(exporter);
+            }
+
 //            MinekeaMod.ITEMS.configureRecipes(exporter);
         }
     }
@@ -81,6 +87,10 @@ public class ModDataGenerator implements DataGeneratorEntrypoint {
                 group.configureItemTags(arg, this::getOrCreateTagBuilder);
             }
 
+            for (ItemDataGeneratorGroup group : ModItemDataGenerators.ITEM_GROUPS) {
+                group.configureItemTags(arg, this::getOrCreateTagBuilder);
+            }
+
 //            MinekeaMod.ITEMS.configureItemTags(arg, this::getOrCreateTagBuilder);
         }
     }
@@ -93,6 +103,10 @@ public class ModDataGenerator implements DataGeneratorEntrypoint {
         @Override
         public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
             for (BlockDataGeneratorGroup group : ModBlockDataGenerators.BLOCK_GROUPS) {
+                group.configureTranslations(registryLookup, translationBuilder);
+            }
+
+            for (ItemDataGeneratorGroup group : ModItemDataGenerators.ITEM_GROUPS) {
                 group.configureTranslations(registryLookup, translationBuilder);
             }
 
@@ -138,6 +152,10 @@ public class ModDataGenerator implements DataGeneratorEntrypoint {
         @Override
         public void generateItemModels(ItemModelGenerator itemModelGenerator) {
             for (BlockDataGeneratorGroup group : ModBlockDataGenerators.BLOCK_GROUPS) {
+                group.configureItemModels(itemModelGenerator);
+            }
+
+            for (ItemDataGeneratorGroup group : ModItemDataGenerators.ITEM_GROUPS) {
                 group.configureItemModels(itemModelGenerator);
             }
 

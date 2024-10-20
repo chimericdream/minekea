@@ -3,6 +3,8 @@ package com.chimericdream.minekea.registry;
 import com.chimericdream.minekea.MinekeaMod;
 import com.chimericdream.minekea.ModInfo;
 import com.chimericdream.minekea.block.ModBlocks;
+import com.chimericdream.minekea.crop.ModCrops;
+import com.chimericdream.minekea.item.ModItems;
 import dev.architectury.platform.Platform;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.Registrar;
@@ -25,6 +27,8 @@ public class ModRegistries {
 
     public static void init() {
         ModBlocks.init();
+        ModCrops.init();
+        ModItems.init();
 
         MinekeaMod.LOGGER.debug("[minekea] registering blocks");
         BLOCKS.register();
@@ -41,6 +45,10 @@ public class ModRegistries {
 
     public static RegistrySupplier<Block> registerWithItem(String name, Supplier<Block> supplier) {
         return registerWithItem(name, supplier, new Item.Settings());
+    }
+
+    public static RegistrySupplier<Block> registerWithItem(Identifier id, Supplier<Block> supplier) {
+        return registerWithItem(id, supplier, new Item.Settings());
     }
 
     public static RegistrySupplier<Block> registerWithItem(String name, Supplier<Block> supplier, Item.Settings itemSettings) {

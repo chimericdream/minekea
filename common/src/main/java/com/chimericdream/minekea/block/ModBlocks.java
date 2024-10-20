@@ -1,13 +1,13 @@
 package com.chimericdream.minekea.block;
 
 import com.chimericdream.minekea.block.building.BuildingBlocks;
-import com.chimericdream.minekea.util.ModBlockGroup;
+import com.chimericdream.minekea.util.ModThingGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ModBlocks {
-    public static final List<ModBlockGroup> BLOCK_GROUPS = new ArrayList<>();
+    public static final List<ModThingGroup> BLOCK_GROUPS = new ArrayList<>();
 
     public static final BuildingBlocks BUILDING_BLOCKS;
 
@@ -18,8 +18,5 @@ public class ModBlocks {
     }
 
     public static void init() {
-        for (ModBlockGroup blockGroup : BLOCK_GROUPS) {
-            blockGroup.init();
-        }
     }
 }
