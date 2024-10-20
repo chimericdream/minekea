@@ -1,5 +1,6 @@
 package com.chimericdream.minekea.block.building;
 
+import com.chimericdream.minekea.MinekeaMod;
 import com.chimericdream.minekea.block.building.general.BasaltBricksBlock;
 import com.chimericdream.minekea.util.ModBlockGroup;
 import dev.architectury.registry.registries.RegistrySupplier;
@@ -20,14 +21,14 @@ public class BuildingBlocks implements ModBlockGroup {
     public static final RegistrySupplier<Block> BASALT_BRICKS = registerWithItem(BasaltBricksBlock.BLOCK_ID, BasaltBricksBlock::new, DEFAULT_SETTINGS);
 
     static {
-        BLOCKS.add(BASALT_BRICKS.get());
+        try {
+            BLOCKS.add(BASALT_BRICKS.get());
+        } catch (Exception e) {
+            MinekeaMod.LOGGER.warn("An exception occurred while initializing building blocks: {}", e.getMessage());
+            MinekeaMod.LOGGER.warn("If you are on NeoForge, this is expected and can be ignored.");
+        }
     }
 
-    public static void init() {
-    }
-
-    @Override
-    public List<Block> getBlocks() {
-        return BLOCKS;
+    public void init() {
     }
 }

@@ -16,4 +16,10 @@ public class ModBlocks {
 
         BLOCK_GROUPS.add(BUILDING_BLOCKS);
     }
+
+    public static void init() {
+        for (ModBlockGroup blockGroup : BLOCK_GROUPS) {
+            blockGroup.init();
+        }
+    }
 }

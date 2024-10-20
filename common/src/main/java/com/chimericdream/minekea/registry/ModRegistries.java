@@ -2,7 +2,7 @@ package com.chimericdream.minekea.registry;
 
 import com.chimericdream.minekea.MinekeaMod;
 import com.chimericdream.minekea.ModInfo;
-import com.chimericdream.minekea.block.building.BuildingBlocks;
+import com.chimericdream.minekea.block.ModBlocks;
 import dev.architectury.platform.Platform;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.Registrar;
@@ -24,7 +24,7 @@ public class ModRegistries {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(ModInfo.MOD_ID, (RegistryKey<Registry<BlockEntityType<?>>>) Registries.BLOCK_ENTITY_TYPE.getKey());
 
     public static void init() {
-        BuildingBlocks.init();
+        ModBlocks.init();
 
         MinekeaMod.LOGGER.debug("[minekea] registering blocks");
         BLOCKS.register();
