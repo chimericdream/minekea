@@ -28,7 +28,6 @@
     "mixins": [
         "minekea.mixins.json"
     ],
-    "accessWidener": "minekea.accesswidener",
     "depends": {
         "fabricloader": ">=0.15.0",
         "minecraft": "~1.21",

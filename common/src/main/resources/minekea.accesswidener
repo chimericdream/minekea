@@ -12,3 +12,6 @@ mutable field net/minecraft/world/poi/PointOfInterestType blockStates Ljava/util
 accessible method net/minecraft/entity/decoration/ArmorStandEntity setSmall (Z)V
 accessible method net/minecraft/entity/decoration/ArmorStandEntity setMarker (Z)V
 accessible field net/minecraft/entity/decoration/ArmorStandEntity disabledSlots I
+
+accessible method net/minecraft/data/client/BlockStateVariantMap getProperties ()Ljava/util/List;
+accessible method net/minecraft/data/client/BlockStateVariantMap getVariants ()Ljava/util/Map;
