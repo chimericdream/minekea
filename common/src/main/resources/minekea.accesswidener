@@ -15,3 +15,6 @@ accessible field net/minecraft/entity/decoration/ArmorStandEntity disabledSlots 
 
 accessible method net/minecraft/data/client/BlockStateVariantMap getProperties ()Ljava/util/List;
 accessible method net/minecraft/data/client/BlockStateVariantMap getVariants ()Ljava/util/Map;
+
+accessible method net/minecraft/data/client/TextureKey of (Ljava/lang/String;)Lnet/minecraft/data/client/TextureKey;
+accessible method net/minecraft/data/client/TextureKey of (Ljava/lang/String;Lnet/minecraft/data/client/TextureKey;)Lnet/minecraft/data/client/TextureKey;
