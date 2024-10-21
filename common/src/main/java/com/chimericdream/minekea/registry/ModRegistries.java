@@ -3,38 +3,72 @@ package com.chimericdream.minekea.registry;
 import com.chimericdream.minekea.MinekeaMod;
 import com.chimericdream.minekea.ModInfo;
 import com.chimericdream.minekea.block.ModBlocks;
+import com.chimericdream.minekea.block.building.beams.Beams;
+import com.chimericdream.minekea.block.building.covers.Covers;
 import com.chimericdream.minekea.crop.ModCrops;
 import com.chimericdream.minekea.item.ModItems;
 import dev.architectury.platform.Platform;
+import dev.architectury.registry.CreativeTabRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.Registrar;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import java.util.function.Supplier;
 
 public class ModRegistries {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ModInfo.MOD_ID, (RegistryKey<Registry<Block>>) Registries.BLOCK.getKey());
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ModInfo.MOD_ID, (RegistryKey<Registry<Item>>) Registries.ITEM.getKey());
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(ModInfo.MOD_ID, (RegistryKey<Registry<BlockEntityType<?>>>) Registries.BLOCK_ENTITY_TYPE.getKey());
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ModInfo.MOD_ID, (RegistryKey<Registry<Item>>) Registries.ITEM.getKey());
+    public static final DeferredRegister<ItemGroup> ITEM_GROUPS = DeferredRegister.create(ModInfo.MOD_ID, (RegistryKey<Registry<ItemGroup>>) Registries.ITEM_GROUP.getKey());
+    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ModInfo.MOD_ID, (RegistryKey<Registry<EntityType<?>>>) Registries.ENTITY_TYPE.getKey());
+
+    public static final RegistrySupplier<ItemGroup> BEAMS_ITEM_GROUP = ITEM_GROUPS.register(
+        "item_group.minekea.blocks.building.beams",
+        () -> CreativeTabRegistry.create(
+            Text.translatable("item_group.minekea.blocks.building.beams"),
+            () -> new ItemStack(Beams.BLOCKS.getFirst().get())
+        )
+    );
+
+    public static final RegistrySupplier<ItemGroup> COVERS_ITEM_GROUP = ITEM_GROUPS.register(
+        "item_group.minekea.blocks.building.covers",
+        () -> CreativeTabRegistry.create(
+            Text.translatable("item_group.minekea.blocks.building.covers"),
+            () -> new ItemStack(Covers.BLOCKS.getFirst().get())
+        )
+    );
 
     public static void init() {
         ModBlocks.init();
         ModCrops.init();
         ModItems.init();
 
-        MinekeaMod.LOGGER.debug("[minekea] registering blocks");
+        MinekeaMod.LOGGER.debug("Registering blocks");
         BLOCKS.register();
 
-        MinekeaMod.LOGGER.debug("[minekea] registering items");
+        MinekeaMod.LOGGER.debug("Registering block entities");
+        BLOCK_ENTITY_TYPES.register();
+
+        MinekeaMod.LOGGER.debug("Registering items");
         ITEMS.register();
+
+        MinekeaMod.LOGGER.debug("Registering item groups");
+        ITEM_GROUPS.register();
+
+        MinekeaMod.LOGGER.debug("Registering entities");
+        ENTITY_TYPES.register();
     }
 
     public static <T extends BlockEntityType<?>> RegistrySupplier<T> registerBlockEntity(final String name, final Supplier<T> supplier) {

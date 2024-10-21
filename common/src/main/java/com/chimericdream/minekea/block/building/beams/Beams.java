@@ -10,13 +10,13 @@ import com.chimericdream.minekea.block.building.general.CrimsonBasaltBricksBlock
 import com.chimericdream.minekea.block.building.general.MossyBasaltBricksBlock;
 import com.chimericdream.minekea.block.building.general.WarpedBasaltBricksBlock;
 import com.chimericdream.minekea.block.building.general.WarpedNetherBricksBlock;
+import com.chimericdream.minekea.registry.ModRegistries;
 import com.chimericdream.minekea.util.ModThingGroup;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ import java.util.List;
 import static com.chimericdream.minekea.registry.ModRegistries.registerWithItem;
 
 public class Beams implements ModThingGroup {
-    public static final Item.Settings DEFAULT_BEAM_SETTINGS = new Item.Settings().arch$tab(ItemGroups.BUILDING_BLOCKS);
+    public static final Item.Settings DEFAULT_BEAM_SETTINGS = new Item.Settings().arch$tab(ModRegistries.BEAMS_ITEM_GROUP);
 
     public static final List<RegistrySupplier<Block>> BLOCKS = new ArrayList<>();
 

@@ -19,6 +19,26 @@
     "minekea:building/beams/spruce",
     "minekea:building/beams/spruce_log",
     "minekea:building/beams/warped",
-    "minekea:building/beams/warped_stem"
+    "minekea:building/beams/warped_stem",
+    "minekea:building/covers/acacia",
+    "minekea:building/covers/birch",
+    "minekea:building/covers/cherry",
+    "minekea:building/covers/crimson",
+    "minekea:building/covers/dark_oak",
+    "minekea:building/covers/jungle",
+    "minekea:building/covers/mangrove",
+    "minekea:building/covers/oak",
+    "minekea:building/covers/spruce",
+    "minekea:building/covers/warped",
+    "minekea:building/covers/acacia_log",
+    "minekea:building/covers/birch_log",
+    "minekea:building/covers/cherry_log",
+    "minekea:building/covers/crimson_stem",
+    "minekea:building/covers/dark_oak_log",
+    "minekea:building/covers/jungle_log",
+    "minekea:building/covers/mangrove_log",
+    "minekea:building/covers/oak_log",
+    "minekea:building/covers/spruce_log",
+    "minekea:building/covers/warped_stem"
   ]
 }

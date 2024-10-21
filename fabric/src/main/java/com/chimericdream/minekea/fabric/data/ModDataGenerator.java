@@ -2,6 +2,7 @@ package com.chimericdream.minekea.fabric.data;
 
 import com.chimericdream.minekea.fabric.block.ModBlockDataGenerators;
 import com.chimericdream.minekea.fabric.item.ModItemDataGenerators;
+import com.chimericdream.minekea.fabric.registry.ModRegistryDataGenerator;
 import com.chimericdream.minekea.fabric.util.BlockDataGeneratorGroup;
 import com.chimericdream.minekea.fabric.util.ItemDataGeneratorGroup;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -110,13 +111,9 @@ public class ModDataGenerator implements DataGeneratorEntrypoint {
                 group.configureTranslations(registryLookup, translationBuilder);
             }
 
-//            MinekeaMod.ITEMS.configureTranslations(registryLookup, translationBuilder);
+            ModRegistryDataGenerator.configureTranslations(registryLookup, translationBuilder);
 
-//            translationBuilder.add("item_group.minekea.blocks.building.beams", "Minekea: Beams");
-//            translationBuilder.add("item_group.minekea.blocks.building.compressed", "Minekea: Compressed Blocks");
-//            translationBuilder.add("item_group.minekea.blocks.building.covers", "Minekea: Covers");
-//            translationBuilder.add("item_group.minekea.blocks.building.dyed", "Minekea: Dyed Blocks");
-//            translationBuilder.add("item_group.minekea.blocks.furniture", "Minekea: Furniture");
+//            MinekeaMod.ITEMS.configureTranslations(registryLookup, translationBuilder);
         }
     }
 
