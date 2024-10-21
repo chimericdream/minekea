@@ -2,6 +2,7 @@ package com.chimericdream.minekea.fabric.block.furniture;
 
 import com.chimericdream.lib.fabric.blocks.FabricBlockDataGenerator;
 import com.chimericdream.minekea.block.furniture.pillows.Pillows;
+import com.chimericdream.minekea.block.furniture.tables.Tables;
 import com.chimericdream.minekea.fabric.util.BlockDataGeneratorGroup;
 
 import java.util.ArrayList;
@@ -12,6 +13,9 @@ public class FurnitureBlocksDataGenerator implements BlockDataGeneratorGroup {
 
     static {
         Pillows.BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new PillowBlockDataGenerator(block.get())));
+        Tables.BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new TableBlockDataGenerator(block.get())));
+
+        BLOCK_GENERATORS.add(new TableBlockDataGenerator.TableTooltipDataGenerator());
     }
 
     @Override

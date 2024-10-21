@@ -6,6 +6,7 @@ import com.chimericdream.minekea.block.ModBlocks;
 import com.chimericdream.minekea.block.building.beams.Beams;
 import com.chimericdream.minekea.block.building.covers.Covers;
 import com.chimericdream.minekea.block.building.dyed.DyedBlocks;
+import com.chimericdream.minekea.block.furniture.tables.Tables;
 import com.chimericdream.minekea.crop.ModCrops;
 import com.chimericdream.minekea.item.ModItems;
 import dev.architectury.platform.Platform;
