@@ -2,12 +2,12 @@ package com.chimericdream.minekea.block.building.dyed;
 
 import com.chimericdream.lib.blocks.BlockConfig;
 import com.chimericdream.lib.util.Tool;
+import com.chimericdream.minekea.registry.ModRegistries;
 import com.chimericdream.minekea.util.ModThingGroup;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.util.DyeColor;
 import oshi.util.tuples.Pair;
 import oshi.util.tuples.Triplet;
@@ -20,7 +20,7 @@ import java.util.Map;
 import static com.chimericdream.minekea.registry.ModRegistries.registerWithItem;
 
 public class DyedBlocks implements ModThingGroup {
-    public static final Item.Settings DEFAULT_DYED_BLOCK_SETTINGS = new Item.Settings().arch$tab(ItemGroups.COLORED_BLOCKS);
+    public static final Item.Settings DEFAULT_DYED_BLOCK_SETTINGS = new Item.Settings().arch$tab(ModRegistries.DYED_BLOCK_ITEM_GROUP);
 
     public static final Map<String, RegistrySupplier<Block>> BLOCK_MAP = new LinkedHashMap<>();
     public static final Map<String, RegistrySupplier<Block>> PILLAR_BLOCK_MAP = new LinkedHashMap<>();

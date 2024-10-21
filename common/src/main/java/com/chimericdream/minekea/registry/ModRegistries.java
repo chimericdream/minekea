@@ -5,6 +5,7 @@ import com.chimericdream.minekea.ModInfo;
 import com.chimericdream.minekea.block.ModBlocks;
 import com.chimericdream.minekea.block.building.beams.Beams;
 import com.chimericdream.minekea.block.building.covers.Covers;
+import com.chimericdream.minekea.block.building.dyed.DyedBlocks;
 import com.chimericdream.minekea.crop.ModCrops;
 import com.chimericdream.minekea.item.ModItems;
 import dev.architectury.platform.Platform;
@@ -52,6 +53,22 @@ public class ModRegistries {
         () -> CreativeTabRegistry.create(
             Text.translatable("item_group.minekea.blocks.building.covers"),
             () -> new ItemStack(Covers.BLOCKS.getFirst().get())
+        )
+    );
+
+    public static RegistrySupplier<ItemGroup> DYED_BLOCK_ITEM_GROUP = ITEM_GROUPS.register(
+        "item_group.minekea.blocks.building.dyed",
+        () -> CreativeTabRegistry.create(
+            Text.translatable("item_group.minekea.blocks.building.dyed"),
+            () -> new ItemStack(DyedBlocks.BLOCKS.getFirst().get())
+        )
+    );
+
+    public static final RegistrySupplier<ItemGroup> FURNITURE_ITEM_GROUP = ITEM_GROUPS.register(
+        "item_group.minekea.blocks.furniture",
+        () -> CreativeTabRegistry.create(
+            Text.translatable("item_group.minekea.blocks.furniture"),
+            () -> new ItemStack(Tables.BLOCKS.getFirst().get())
         )
     );
 
