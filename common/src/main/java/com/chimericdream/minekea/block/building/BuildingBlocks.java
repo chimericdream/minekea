@@ -12,6 +12,7 @@ import com.chimericdream.minekea.block.building.general.MossyBasaltBricksBlock;
 import com.chimericdream.minekea.block.building.general.WarpedBasaltBricksBlock;
 import com.chimericdream.minekea.block.building.general.WarpedNetherBricksBlock;
 import com.chimericdream.minekea.block.building.general.WaxBlock;
+import com.chimericdream.minekea.block.building.slabs.Slabs;
 import com.chimericdream.minekea.util.ModThingGroup;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.block.Block;
@@ -93,5 +94,7 @@ public class BuildingBlocks implements ModThingGroup {
         BLOCKS.addAll(DyedBlocks.BLOCK_MAP.values());
         BLOCKS.addAll(DyedBlocks.PILLAR_BLOCK_MAP.values());
         BLOCKS.addAll(FramedBlocks.FRAMED_PLANKS);
+        BLOCKS.addAll(Slabs.SLAB_BLOCKS);
+        BLOCKS.addAll(Slabs.VERTICAL_SLAB_BLOCKS);
     }
 }
