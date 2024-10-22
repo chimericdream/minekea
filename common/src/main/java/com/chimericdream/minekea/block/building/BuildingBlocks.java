@@ -1,6 +1,7 @@
 package com.chimericdream.minekea.block.building;
 
 import com.chimericdream.minekea.block.building.beams.Beams;
+import com.chimericdream.minekea.block.building.compressed.CompressedBlocks;
 import com.chimericdream.minekea.block.building.covers.Covers;
 import com.chimericdream.minekea.block.building.dyed.DyedBlocks;
 import com.chimericdream.minekea.block.building.framed.FramedBlocks;
@@ -91,6 +92,9 @@ public class BuildingBlocks implements ModThingGroup {
         BLOCKS.addAll(WAX_BLOCKS.values());
 
         BLOCKS.addAll(Beams.BLOCKS);
+        BLOCKS.addAll(CompressedBlocks.BLOCKS);
+        BLOCKS.addAll(CompressedBlocks.COLUMN_BLOCKS);
+        BLOCKS.addAll(CompressedBlocks.MINEKEA_BLOCKS);
         BLOCKS.addAll(Covers.BLOCKS);
         BLOCKS.addAll(DyedBlocks.BLOCK_MAP.values());
         BLOCKS.addAll(DyedBlocks.PILLAR_BLOCK_MAP.values());

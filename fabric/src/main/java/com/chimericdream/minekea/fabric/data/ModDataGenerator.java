@@ -32,15 +32,12 @@ public class ModDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(MinekeaBlockTagGenerator::new);
         pack.addProvider(MinekeaItemTagGenerator::new);
 
-//        if (JarAccess.canLoad()) {
-//            new TextureGenerator(pack);
-//
-//            for (FabricModBlockGroup category : MinekeaMod.BLOCK_CATEGORIES) {
-//                category.generateTextures();
-//            }
-//
-//            MinekeaMod.ITEMS.generateTextures();
-//        }
+        if (JarAccess.canLoad()) {
+            new TextureGenerator(pack);
+
+            ModBlockDataGenerators.BLOCK_GROUPS.forEach(BlockDataGeneratorGroup::generateTextures);
+            ModItemDataGenerators.ITEM_GROUPS.forEach(ItemDataGeneratorGroup::generateTextures);
+        }
     }
 
     private static class MinekeaRecipeGenerator extends FabricRecipeProvider {

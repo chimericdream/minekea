@@ -4,6 +4,7 @@ import com.chimericdream.minekea.MinekeaMod;
 import com.chimericdream.minekea.ModInfo;
 import com.chimericdream.minekea.block.ModBlocks;
 import com.chimericdream.minekea.block.building.beams.Beams;
+import com.chimericdream.minekea.block.building.compressed.CompressedBlocks;
 import com.chimericdream.minekea.block.building.covers.Covers;
 import com.chimericdream.minekea.block.building.dyed.DyedBlocks;
 import com.chimericdream.minekea.block.furniture.tables.Tables;
@@ -46,6 +47,14 @@ public class ModRegistries {
         () -> CreativeTabRegistry.create(
             Text.translatable("item_group.minekea.blocks.building.beams"),
             () -> new ItemStack(Beams.BLOCKS.getFirst().get())
+        )
+    );
+
+    public static final RegistrySupplier<ItemGroup> COMPRESSED_BLOCK_ITEM_GROUP = ITEM_GROUPS.register(
+        "item_group.minekea.blocks.building.compressed",
+        () -> CreativeTabRegistry.create(
+            Text.translatable("item_group.minekea.blocks.building.compressed"),
+            () -> new ItemStack(CompressedBlocks.BLOCKS.getFirst().get())
         )
     );
 
