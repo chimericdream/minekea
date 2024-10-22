@@ -139,4 +139,14 @@ public class ModRegistries {
 
         return registrar.register(path, itemSupplier);
     }
+
+    public static <T extends EntityType<?>> RegistrySupplier<T> registerEntityType(Identifier path, Supplier<T> entitySupplier) {
+        Registrar<EntityType<?>> registrar = ENTITY_TYPES.getRegistrar();
+
+        if (Platform.isNeoForge()) {
+            return ENTITY_TYPES.register(path.getPath(), entitySupplier);
+        }
+
+        return registrar.register(path, entitySupplier);
+    }
 }
