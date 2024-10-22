@@ -17,6 +17,7 @@ import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.Identifier;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -68,24 +69,31 @@ public class CompressedBlockDataGenerator implements FabricBlockDataGenerator {
         blockStateModelGenerator.registerSimpleCubeAll(BLOCK);
     }
 
+    protected void addTextureOverlay(TextureGenerator.Instance<Block> instance, Optional<BufferedImage> source, Identifier blockId) {
+        if (source.isPresent()) {
+            BufferedImage sourceImage = source.get();
+            BufferedImage overlayImage = instance.getMinekeaImage(String.format("block/building/compressed/level-%d", BLOCK.compressionLevel)).orElse(null);
+
+            BufferedImage combined = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
+
+            Graphics g = combined.getGraphics();
+            g.drawImage(sourceImage, 0, 0, null);
+            g.drawImage(overlayImage, 0, 0, 16, 16, null);
+
+            g.dispose();
+
+            instance.generate(blockId, combined);
+        }
+    }
+
+    protected void generateTexture(TextureGenerator.Instance<Block> instance, String key, Identifier blockId) {
+        final Optional<BufferedImage> source = instance.getImage(key);
+        addTextureOverlay(instance, source, blockId);
+    }
+
     public void generateTextures() {
         TextureGenerator.getInstance().generate(Registries.BLOCK.getKey(), instance -> {
-            final Optional<BufferedImage> source = instance.getImage(BLOCK.config.getMaterial());
-
-            if (source.isPresent()) {
-                BufferedImage sourceImage = source.get();
-                BufferedImage overlayImage = instance.getMinekeaImage(String.format("block/building/compressed/level-%d", BLOCK.compressionLevel)).orElse(null);
-
-                BufferedImage combined = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
-
-                Graphics g = combined.getGraphics();
-                g.drawImage(sourceImage, 0, 0, null);
-                g.drawImage(overlayImage, 0, 0, 16, 16, null);
-
-                g.dispose();
-
-                instance.generate(BLOCK.BLOCK_ID, combined);
-            }
+            generateTexture(instance, BLOCK.config.getMaterial(), BLOCK.BLOCK_ID);
         });
     }
 
