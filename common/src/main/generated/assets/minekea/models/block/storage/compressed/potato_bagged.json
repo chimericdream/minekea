@@ -1,0 +1,7 @@
+{
+  "parent": "minekea:block/storage/bagged_block",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "contents": "minekea:block/storage/compressed/potato"
+  }
+}

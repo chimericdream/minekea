@@ -9,6 +9,7 @@ import com.chimericdream.minekea.block.building.dyed.DyedBlocks;
 import com.chimericdream.minekea.block.building.framed.FramedBlocks;
 import com.chimericdream.minekea.block.building.slabs.Slabs;
 import com.chimericdream.minekea.block.building.stairs.Stairs;
+import com.chimericdream.minekea.block.building.storage.StorageBlocks;
 import com.chimericdream.minekea.fabric.block.building.compressed.CompressedBlockDataGenerator;
 import com.chimericdream.minekea.fabric.block.building.compressed.CompressedColumnBlockDataGenerator;
 import com.chimericdream.minekea.fabric.block.building.compressed.CompressedMinekeaBlockDataGenerator;
@@ -20,6 +21,9 @@ import com.chimericdream.minekea.fabric.block.building.general.MossyBasaltBricks
 import com.chimericdream.minekea.fabric.block.building.general.WarpedBasaltBricksDataGenerator;
 import com.chimericdream.minekea.fabric.block.building.general.WarpedNetherBricksDataGenerator;
 import com.chimericdream.minekea.fabric.block.building.general.WaxBlockDataGenerator;
+import com.chimericdream.minekea.fabric.block.building.storage.DyeBlockDataGenerator;
+import com.chimericdream.minekea.fabric.block.building.storage.ItemStorageBlockDataGenerator;
+import com.chimericdream.minekea.fabric.block.building.storage.SetOfEggsBlockDataGenerator;
 import com.chimericdream.minekea.fabric.util.BlockDataGeneratorGroup;
 
 import java.util.ArrayList;
@@ -50,8 +54,11 @@ public class BuildingBlocksDataGenerator implements BlockDataGeneratorGroup {
         Slabs.VERTICAL_SLAB_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new VerticalSlabBlockDataGenerator(block.get())));
         Stairs.STAIRS_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new StairsBlockDataGenerator(block.get())));
         Stairs.VERTICAL_STAIRS_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new VerticalStairsBlockDataGenerator(block.get())));
+        StorageBlocks.STORAGE_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new ItemStorageBlockDataGenerator(block.get())));
+        StorageBlocks.DYE_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new DyeBlockDataGenerator(block.get())));
 
         BLOCK_GENERATORS.add(new CompressedBlockDataGenerator.CompressedBlockTooltipDataGenerator());
+        BLOCK_GENERATORS.add(new SetOfEggsBlockDataGenerator());
     }
 
     @Override

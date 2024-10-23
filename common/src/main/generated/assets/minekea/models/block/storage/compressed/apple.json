@@ -1,0 +1,9 @@
+{
+  "parent": "minekea:block/storage/compressed_column",
+  "render_type": "minecraft:solid",
+  "textures": {
+    "bottom": "minekea:block/storage/compressed/apple_bottom",
+    "side": "minekea:block/storage/compressed/apple_side",
+    "top": "minekea:block/storage/compressed/apple_top"
+  }
+}

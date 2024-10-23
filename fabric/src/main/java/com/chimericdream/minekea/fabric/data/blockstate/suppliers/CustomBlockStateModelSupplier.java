@@ -1,5 +1,6 @@
 package com.chimericdream.minekea.fabric.data.blockstate.suppliers;
 
+import com.chimericdream.lib.blocks.BlockConfig;
 import com.google.gson.JsonObject;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -21,8 +22,8 @@ import java.util.Optional;
 /*
  * @TODO: abstract this out to chimericlib where I can add more custom model registration methods
  */
-public class CustomCropSupplier {
-    private static final Model CUSTOM_CROP = new CustomCropModel();
+public class CustomBlockStateModelSupplier {
+    public static final Model CUSTOM_CROP = new CustomCropModel();
 
     public static void registerCrop(BlockStateModelGenerator generator, Block crop, Property<Integer> ageProperty, int... ageTextureIndices) {
         if (ageProperty.getValues().size() != ageTextureIndices.length) {
@@ -41,21 +42,35 @@ public class CustomCropSupplier {
         }
     }
 
-    /*
-     * @TODO: abstract this out to chimericlib and make it more generic; i.e. support the rest of the render types in NeoForge
-     *   @see https://docs.neoforged.net/docs/resources/client/models/#render-types
-     */
-    private static class CustomCropModel extends Model {
-        public CustomCropModel() {
-            super(Optional.of(Identifier.ofVanilla("block/crop")), Optional.empty(), TextureKey.CROP);
+    public static class CustomBlockModel extends Model {
+        private final BlockConfig.RenderType renderType;
+
+        public CustomBlockModel(Optional<Identifier> parent, Optional<String> variant, TextureKey... requiredTextureKeys) {
+            this(BlockConfig.RenderType.SOLID, parent, variant, requiredTextureKeys);
+        }
+
+        public CustomBlockModel(BlockConfig.RenderType renderType, Optional<Identifier> parent, Optional<String> variant, TextureKey... requiredTextureKeys) {
+            super(parent, variant, requiredTextureKeys);
+
+            this.renderType = renderType;
         }
 
         @Override
         public JsonObject createJson(Identifier id, Map<TextureKey, Identifier> textures) {
             JsonObject jsonObject = super.createJson(id, textures);
-            jsonObject.addProperty("render_type", "minecraft:cutout");
+            jsonObject.addProperty("render_type", renderType.name);
 
             return jsonObject;
+        }
+    }
+
+    /*
+     * @TODO: abstract this out to chimericlib and make it more generic; i.e. support the rest of the render types in NeoForge
+     *   @see https://docs.neoforged.net/docs/resources/client/models/#render-types
+     */
+    public static class CustomCropModel extends CustomBlockModel {
+        public CustomCropModel() {
+            super(BlockConfig.RenderType.CUTOUT, Optional.of(Identifier.ofVanilla("block/crop")), Optional.empty(), TextureKey.CROP);
         }
     }
 }
