@@ -1570,6 +1570,12 @@
     "minekea:building/stairs/vertical/crimson_basalt_bricks",
     "minekea:building/stairs/vertical/mossy_basalt_bricks",
     "minekea:building/stairs/vertical/warped_basalt_bricks",
-    "minekea:building/stairs/vertical/warped_nether_bricks"
+    "minekea:building/stairs/vertical/warped_nether_bricks",
+    "minekea:building/walls/basalt_bricks",
+    "minekea:building/walls/cracked_basalt_bricks",
+    "minekea:building/walls/crimson_basalt_bricks",
+    "minekea:building/walls/mossy_basalt_bricks",
+    "minekea:building/walls/warped_basalt_bricks",
+    "minekea:building/walls/warped_nether_bricks"
   ]
 }

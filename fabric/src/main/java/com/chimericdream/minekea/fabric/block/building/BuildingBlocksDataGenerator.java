@@ -10,6 +10,7 @@ import com.chimericdream.minekea.block.building.framed.FramedBlocks;
 import com.chimericdream.minekea.block.building.slabs.Slabs;
 import com.chimericdream.minekea.block.building.stairs.Stairs;
 import com.chimericdream.minekea.block.building.storage.StorageBlocks;
+import com.chimericdream.minekea.block.building.walls.Walls;
 import com.chimericdream.minekea.fabric.block.building.compressed.CompressedBlockDataGenerator;
 import com.chimericdream.minekea.fabric.block.building.compressed.CompressedColumnBlockDataGenerator;
 import com.chimericdream.minekea.fabric.block.building.compressed.CompressedMinekeaBlockDataGenerator;
@@ -56,6 +57,7 @@ public class BuildingBlocksDataGenerator implements BlockDataGeneratorGroup {
         Stairs.VERTICAL_STAIRS_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new VerticalStairsBlockDataGenerator(block.get())));
         StorageBlocks.STORAGE_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new ItemStorageBlockDataGenerator(block.get())));
         StorageBlocks.DYE_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new DyeBlockDataGenerator(block.get())));
+        Walls.BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new WallBlockDataGenerator(block.get())));
 
         BLOCK_GENERATORS.add(new CompressedBlockDataGenerator.CompressedBlockTooltipDataGenerator());
         BLOCK_GENERATORS.add(new SetOfEggsBlockDataGenerator());

@@ -16,6 +16,7 @@ import com.chimericdream.minekea.block.building.general.WaxBlock;
 import com.chimericdream.minekea.block.building.slabs.Slabs;
 import com.chimericdream.minekea.block.building.stairs.Stairs;
 import com.chimericdream.minekea.block.building.storage.StorageBlocks;
+import com.chimericdream.minekea.block.building.walls.Walls;
 import com.chimericdream.minekea.util.ModThingGroup;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.block.Block;
@@ -105,5 +106,6 @@ public class BuildingBlocks implements ModThingGroup {
         BLOCKS.addAll(Stairs.STAIRS_BLOCKS);
         BLOCKS.addAll(Stairs.VERTICAL_STAIRS_BLOCKS);
         BLOCKS.addAll(StorageBlocks.BLOCKS);
+        BLOCKS.addAll(Walls.BLOCKS);
     }
 }
