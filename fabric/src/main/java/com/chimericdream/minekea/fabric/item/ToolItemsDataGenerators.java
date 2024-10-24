@@ -1,6 +1,7 @@
 package com.chimericdream.minekea.fabric.item;
 
 import com.chimericdream.lib.fabric.items.FabricItemDataGenerator;
+import com.chimericdream.minekea.fabric.item.tools.BlockPainterItemDataGenerator;
 import com.chimericdream.minekea.fabric.item.tools.HammerItemDataGenerator;
 import com.chimericdream.minekea.fabric.item.tools.WrenchItemDataGenerator;
 import com.chimericdream.minekea.fabric.util.ItemDataGeneratorGroup;
@@ -14,6 +15,9 @@ public class ToolItemsDataGenerators implements ItemDataGeneratorGroup {
 
     static {
         Tools.HAMMERS.forEach(hammer -> ITEM_GENERATORS.add(new HammerItemDataGenerator(hammer.get())));
+
+        ITEM_GENERATORS.add(new BlockPainterItemDataGenerator());
+        ITEM_GENERATORS.add(new HammerItemDataGenerator.NetheriteUpgrade());
         ITEM_GENERATORS.add(new WrenchItemDataGenerator());
     }
 

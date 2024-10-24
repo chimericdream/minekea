@@ -25,6 +25,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -41,6 +42,8 @@ public class ModRegistries {
     public static final DeferredRegister<ItemGroup> ITEM_GROUPS = DeferredRegister.create(ModInfo.MOD_ID, (RegistryKey<Registry<ItemGroup>>) Registries.ITEM_GROUP.getKey());
     @SuppressWarnings("unchecked")
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ModInfo.MOD_ID, (RegistryKey<Registry<EntityType<?>>>) Registries.ENTITY_TYPE.getKey());
+    @SuppressWarnings("unchecked")
+    public static final DeferredRegister<ScreenHandlerType<?>> SCREEN_HANDLERS = DeferredRegister.create(ModInfo.MOD_ID, (RegistryKey<Registry<ScreenHandlerType<?>>>) Registries.SCREEN_HANDLER.getKey());
 
     public static final RegistrySupplier<ItemGroup> BEAMS_ITEM_GROUP = ITEM_GROUPS.register(
         "item_group.minekea.blocks.building.beams",
@@ -87,6 +90,8 @@ public class ModRegistries {
         ModCrops.init();
         ModItems.init();
 
+        ColoredBlocksRegistry.init();
+
         MinekeaMod.LOGGER.debug("Registering blocks");
         BLOCKS.register();
 
@@ -101,6 +106,9 @@ public class ModRegistries {
 
         MinekeaMod.LOGGER.debug("Registering entities");
         ENTITY_TYPES.register();
+
+        MinekeaMod.LOGGER.debug("Registering screen handlers");
+        SCREEN_HANDLERS.register();
     }
 
     public static <T extends BlockEntityType<?>> RegistrySupplier<T> registerBlockEntity(final String name, final Supplier<T> supplier) {
@@ -157,5 +165,15 @@ public class ModRegistries {
         }
 
         return registrar.register(path, entitySupplier);
+    }
+
+    public static <T extends ScreenHandlerType<?>> RegistrySupplier<T> registerScreenHandler(Identifier path, Supplier<T> screenHandlerSupplier) {
+        Registrar<ScreenHandlerType<?>> registrar = SCREEN_HANDLERS.getRegistrar();
+
+        if (Platform.isNeoForge()) {
+            return SCREEN_HANDLERS.register(path.getPath(), screenHandlerSupplier);
+        }
+
+        return registrar.register(path, screenHandlerSupplier);
     }
 }

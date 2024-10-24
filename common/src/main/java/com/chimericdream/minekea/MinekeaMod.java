@@ -1,5 +1,6 @@
 package com.chimericdream.minekea;
 
+import com.chimericdream.minekea.network.ServerNetworking;
 import com.chimericdream.minekea.registry.ModRegistries;
 import com.google.common.base.Suppliers;
 import dev.architectury.registry.registries.RegistrarManager;
@@ -18,6 +19,9 @@ public final class MinekeaMod {
 
     public static void init() {
         MANAGER = Suppliers.memoize(() -> RegistrarManager.get(ModInfo.MOD_ID));
+
+        LOGGER.info("Initializing server networking");
+        ServerNetworking.init();
 
         ModRegistries.init();
     }

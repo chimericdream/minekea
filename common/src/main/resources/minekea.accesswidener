@@ -18,3 +18,6 @@ accessible method net/minecraft/data/client/BlockStateVariantMap getVariants ()L
 
 accessible method net/minecraft/data/client/TextureKey of (Ljava/lang/String;)Lnet/minecraft/data/client/TextureKey;
 accessible method net/minecraft/data/client/TextureKey of (Ljava/lang/String;Lnet/minecraft/data/client/TextureKey;)Lnet/minecraft/data/client/TextureKey;
+
+accessible method net/minecraft/client/gui/screen/ingame/HandledScreens register (Lnet/minecraft/screen/ScreenHandlerType;Lnet/minecraft/client/gui/screen/ingame/HandledScreens$Provider;)V
+accessible class net/minecraft/client/gui/screen/ingame/HandledScreens$Provider
