@@ -5,19 +5,15 @@ import dev.architectury.core.block.ArchitecturyLiquidBlock;
 import dev.architectury.core.fluid.ArchitecturyFlowingFluid;
 import dev.architectury.core.fluid.ArchitecturyFluidAttributes;
 import dev.architectury.core.fluid.SimpleArchitecturyFluidAttributes;
-import dev.architectury.core.item.ArchitecturyBucketItem;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FluidBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -25,33 +21,37 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class HoneyFluid extends ArchitecturyFlowingFluid.Source {
+public class MilkFluid extends ArchitecturyFlowingFluid.Source {
     public static final ArchitecturyFluidAttributes ATTRIBUTES = SimpleArchitecturyFluidAttributes.of(
-            ModFluids.FLOWING_HONEY,
-            ModFluids.HONEY_FLUID
+            ModFluids.FLOWING_MILK,
+            ModFluids.MILK_FLUID
         )
-        .blockSupplier(() -> ModFluids.HONEY_SOURCE_BLOCK)
-        .bucketItemSupplier(() -> ModFluids.HONEY_BUCKET)
+        .blockSupplier(() -> ModFluids.MILK_SOURCE_BLOCK)
         .slopeFindDistance(2)
         .dropOff(2)
-        .tickDelay(40)
-        .sourceTexture(Identifier.of(ModInfo.MOD_ID, "block/fluids/honey"))
-        .flowingTexture(Identifier.of(ModInfo.MOD_ID, "block/fluids/honey/flowing"))
-        .fillSound(SoundEvents.ITEM_BUCKET_FILL_LAVA)
+        .tickDelay(10)
+        .sourceTexture(Identifier.of(ModInfo.MOD_ID, "block/fluids/milk"))
+        .flowingTexture(Identifier.of(ModInfo.MOD_ID, "block/fluids/milk/flowing"))
+        .fillSound(SoundEvents.ITEM_BUCKET_FILL)
         .color(0xFFFFFF);
 
-    public HoneyFluid() {
-        super(HoneyFluid.ATTRIBUTES);
+    public MilkFluid() {
+        super(MilkFluid.ATTRIBUTES);
+    }
+
+    @Override
+    public Item getBucketItem() {
+        return Items.MILK_BUCKET;
     }
 
     @Override
     protected BlockState toBlockState(FluidState state) {
-        return ModFluids.HONEY_SOURCE_BLOCK.get().getDefaultState().with(FluidBlock.LEVEL, getBlockStateLevel(state));
+        return ModFluids.MILK_SOURCE_BLOCK.get().getDefaultState().with(FluidBlock.LEVEL, getBlockStateLevel(state));
     }
 
     public static class Flowing extends ArchitecturyFlowingFluid.Flowing {
         public Flowing() {
-            super(HoneyFluid.ATTRIBUTES);
+            super(MilkFluid.ATTRIBUTES);
         }
 
         @Override
@@ -62,23 +62,18 @@ public class HoneyFluid extends ArchitecturyFlowingFluid.Source {
 
     public static class Block extends ArchitecturyLiquidBlock {
         public Block() {
-            super(ModFluids.HONEY_FLUID, AbstractBlock.Settings.copy(Blocks.WATER));
+            super(ModFluids.MILK_FLUID, AbstractBlock.Settings.copy(Blocks.WATER));
         }
 
         @Override
         public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
             super.onEntityCollision(state, world, pos, entity);
 
-            if (!world.isClient() && entity instanceof LivingEntity) {
-                ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 300, 2));
+            int level = state.get(FluidBlock.LEVEL);
+
+            if (!world.isClient() && entity instanceof LivingEntity && level == 0) {
+                ((LivingEntity) entity).clearStatusEffects();
             }
         }
     }
-
-    public static class Bucket extends ArchitecturyBucketItem {
-        public Bucket() {
-            super(ModFluids.HONEY_FLUID, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1).arch$tab(ItemGroups.INGREDIENTS));
-        }
-    }
 }
-
