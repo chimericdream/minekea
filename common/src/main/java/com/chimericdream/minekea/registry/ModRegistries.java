@@ -9,6 +9,7 @@ import com.chimericdream.minekea.block.building.covers.Covers;
 import com.chimericdream.minekea.block.building.dyed.DyedBlocks;
 import com.chimericdream.minekea.block.furniture.tables.Tables;
 import com.chimericdream.minekea.crop.ModCrops;
+import com.chimericdream.minekea.fluid.ModFluids;
 import com.chimericdream.minekea.item.ModItems;
 import dev.architectury.platform.Platform;
 import dev.architectury.registry.CreativeTabRegistry;
@@ -18,6 +19,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.EntityType;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -32,6 +34,8 @@ import net.minecraft.util.Identifier;
 import java.util.function.Supplier;
 
 public class ModRegistries {
+    @SuppressWarnings("unchecked")
+    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ModInfo.MOD_ID, (RegistryKey<Registry<Fluid>>) Registries.FLUID.getKey());
     @SuppressWarnings("unchecked")
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ModInfo.MOD_ID, (RegistryKey<Registry<Block>>) Registries.BLOCK.getKey());
     @SuppressWarnings("unchecked")
@@ -86,11 +90,15 @@ public class ModRegistries {
     );
 
     public static void init() {
+        ModFluids.init();
         ModBlocks.init();
         ModCrops.init();
         ModItems.init();
 
         ColoredBlocksRegistry.init();
+
+        MinekeaMod.LOGGER.debug("Registering fluids");
+        FLUIDS.register();
 
         MinekeaMod.LOGGER.debug("Registering blocks");
         BLOCKS.register();
