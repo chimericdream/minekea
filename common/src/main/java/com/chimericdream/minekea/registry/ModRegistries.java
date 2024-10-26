@@ -120,9 +120,13 @@ public class ModRegistries {
     }
 
     public static <T extends BlockEntityType<?>> RegistrySupplier<T> registerBlockEntity(final String name, final Supplier<T> supplier) {
+        return registerBlockEntity(Identifier.of(ModInfo.MOD_ID, name), supplier);
+    }
+
+    public static <T extends BlockEntityType<?>> RegistrySupplier<T> registerBlockEntity(final Identifier id, final Supplier<T> supplier) {
         Registrar<BlockEntityType<?>> registrar = BLOCK_ENTITY_TYPES.getRegistrar();
 
-        return registrar.register(Identifier.of(ModInfo.MOD_ID, name), supplier);
+        return registrar.register(id, supplier);
     }
 
     public static RegistrySupplier<Block> registerWithItem(String name, Supplier<Block> supplier) {
