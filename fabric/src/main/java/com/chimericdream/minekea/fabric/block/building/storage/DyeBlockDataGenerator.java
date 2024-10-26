@@ -1,9 +1,11 @@
 package com.chimericdream.minekea.fabric.block.building.storage;
 
+import com.chimericdream.lib.blocks.BlockConfig;
 import com.chimericdream.lib.colors.ColorHelpers;
 import com.chimericdream.lib.fabric.blocks.FabricBlockDataGenerator;
 import com.chimericdream.minekea.ModInfo;
 import com.chimericdream.minekea.block.building.storage.DyeBlock;
+import com.chimericdream.minekea.fabric.data.blockstate.suppliers.CustomBlockStateModelSupplier;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
@@ -25,7 +27,8 @@ import java.util.Optional;
 public class DyeBlockDataGenerator implements FabricBlockDataGenerator {
     public final DyeBlock BLOCK;
 
-    private static final Model DYE_BLOCK_MODEL = new Model(
+    private static final Model DYE_BLOCK_MODEL = new CustomBlockStateModelSupplier.CustomBlockModel(
+        BlockConfig.RenderType.TRANSLUCENT,
         Optional.of(Identifier.of("minekea:block/storage/dye_block")),
         Optional.empty(),
         TextureKey.BOTTOM,
@@ -36,11 +39,6 @@ public class DyeBlockDataGenerator implements FabricBlockDataGenerator {
     public DyeBlockDataGenerator(Block block) {
         this.BLOCK = (DyeBlock) block;
     }
-
-//    public void register() {
-//        RegistryHelpers.registerBlockWithItem(this, BLOCK_ID);
-//        FabricItemGroupEventHelpers.addBlockToItemGroup(this, ItemGroups.COLORED_BLOCKS);
-//    }
 
     public void configureRecipes(RecipeExporter exporter) {
         Item dye = ColorHelpers.getDye(BLOCK.color);

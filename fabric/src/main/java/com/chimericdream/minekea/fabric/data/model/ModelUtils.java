@@ -1,9 +1,12 @@
 package com.chimericdream.minekea.fabric.data.model;
 
+import com.chimericdream.lib.blocks.BlockConfig;
+import com.chimericdream.minekea.fabric.data.blockstate.suppliers.CustomBlockStateModelSupplier;
 import net.minecraft.block.Block;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.BlockStateVariant;
 import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.Model;
 import net.minecraft.data.client.Models;
 import net.minecraft.data.client.MultipartBlockStateSupplier;
 import net.minecraft.data.client.TextureKey;
@@ -16,7 +19,23 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 
+import java.util.Optional;
+
 public class ModelUtils {
+    public static final Model CUSTOM_TEMPLATE_LANTERN = new CustomBlockStateModelSupplier.CustomBlockModel(
+        BlockConfig.RenderType.CUTOUT,
+        Optional.of(Identifier.ofVanilla("block/template_lantern")),
+        Optional.empty(),
+        TextureKey.LANTERN
+    );
+
+    public static final Model CUSTOM_TEMPLATE_HANGING_LANTERN = new CustomBlockStateModelSupplier.CustomBlockModel(
+        BlockConfig.RenderType.CUTOUT,
+        Optional.of(Identifier.ofVanilla("block/template_hanging_lantern")),
+        Optional.empty(),
+        TextureKey.LANTERN
+    );
+
     public static void registerGeneratedItem(
         ItemModelGenerator itemModelGenerator,
         Block block,
@@ -40,8 +59,8 @@ public class ModelUtils {
         TextureMap textures = new TextureMap()
             .put(TextureKey.LANTERN, blockId.withPrefixedPath("block/"));
 
-        Identifier baseModelId = blockStateModelGenerator.createSubModel(block, "_base", Models.TEMPLATE_LANTERN, unused -> textures);
-        Identifier hangingModelId = blockStateModelGenerator.createSubModel(block, "_hanging", Models.TEMPLATE_HANGING_LANTERN, unused -> textures);
+        Identifier baseModelId = blockStateModelGenerator.createSubModel(block, "_base", CUSTOM_TEMPLATE_LANTERN, unused -> textures);
+        Identifier hangingModelId = blockStateModelGenerator.createSubModel(block, "_hanging", CUSTOM_TEMPLATE_HANGING_LANTERN, unused -> textures);
 
         blockStateModelGenerator.blockStateCollector
             .accept(
