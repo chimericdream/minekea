@@ -1,6 +1,7 @@
 package com.chimericdream.minekea.block.containers;
 
 import com.chimericdream.minekea.block.containers.barrels.Barrels;
+import com.chimericdream.minekea.block.containers.crates.Crates;
 import com.chimericdream.minekea.util.ModThingGroup;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.block.Block;
@@ -13,5 +14,6 @@ public class ContainerBlocks implements ModThingGroup {
 
     static {
         BLOCKS.addAll(Barrels.BLOCKS);
+        BLOCKS.addAll(Crates.BLOCKS);
     }
 }
