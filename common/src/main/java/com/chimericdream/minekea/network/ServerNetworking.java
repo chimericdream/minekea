@@ -18,24 +18,7 @@ public class ServerNetworking {
     public static Identifier CYCLE_PAINTER_COLOR = Identifier.of(ModInfo.MOD_ID, "events/items/painter/cycle");
 
     public static void init() {
-//        registerArmoireEventListeners();
     }
-
-//    private static void registerArmoireEventListeners() {
-//        ServerBlockEntityEvents.BLOCK_ENTITY_LOAD.register((entity, world) -> {
-//            if (entity.getType() == Armoires.ARMOIRE_BLOCK_ENTITY) {
-//                ArmoireBlockEntity armoire = (ArmoireBlockEntity) entity;
-//                armoire.initializeArmorStands(entity.getCachedState());
-//            }
-//        });
-//
-//        ServerBlockEntityEvents.BLOCK_ENTITY_UNLOAD.register((entity, world) -> {
-//            if (entity.getType() == Armoires.ARMOIRE_BLOCK_ENTITY) {
-//                ArmoireBlockEntity armoire = (ArmoireBlockEntity) entity;
-//                armoire.destroyArmorStands();
-//            }
-//        });
-//    }
 
     protected static void handleCyclePainterColorPacket(MinecraftServer server, ServerPlayerEntity player) {
         if (server != null && player != null) {

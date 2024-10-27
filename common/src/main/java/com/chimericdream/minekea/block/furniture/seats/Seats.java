@@ -27,7 +27,7 @@ public class Seats implements ModThingGroup {
     public static final List<RegistrySupplier<Block>> STOOL_BLOCKS = new ArrayList<>();
 
     public static Identifier SEAT_ENTITY_ID = Identifier.of(ModInfo.MOD_ID, "entities/mounts/seat");
-    public static final RegistrySupplier<EntityType> SEAT_ENTITY = registerEntityType(
+    public static final RegistrySupplier<EntityType<SimpleSeatEntity>> SEAT_ENTITY = registerEntityType(
         SEAT_ENTITY_ID,
         () -> EntityType.Builder.create(SimpleSeatEntity::new, SpawnGroup.MISC).build(SEAT_ENTITY_ID.toString())
     );
