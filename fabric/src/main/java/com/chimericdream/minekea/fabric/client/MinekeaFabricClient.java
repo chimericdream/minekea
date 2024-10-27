@@ -4,6 +4,7 @@ import com.chimericdream.minekea.block.building.storage.StorageBlocks;
 import com.chimericdream.minekea.block.decorations.candles.VotiveCandles;
 import com.chimericdream.minekea.block.decorations.lighting.Lanterns;
 import com.chimericdream.minekea.block.furniture.armoires.Armoires;
+import com.chimericdream.minekea.block.furniture.displaycases.DisplayCases;
 import com.chimericdream.minekea.client.MinekeaClient;
 import com.chimericdream.minekea.network.CyclePainterColorPayload;
 import net.fabricmc.api.ClientModInitializer;
@@ -27,6 +28,7 @@ public final class MinekeaFabricClient implements ClientModInitializer {
 
     private void initializeBlockRenderLayers() {
         Armoires.BLOCKS.forEach(block -> BlockRenderLayerMap.INSTANCE.putBlock(block.get(), RenderLayer.getCutout()));
+        DisplayCases.BLOCKS.forEach(block -> BlockRenderLayerMap.INSTANCE.putBlock(block.get(), RenderLayer.getCutout()));
         StorageBlocks.DYE_BLOCKS.forEach(block -> BlockRenderLayerMap.INSTANCE.putBlock(block.get(), RenderLayer.getTranslucent()));
         StorageBlocks.BAGGED_BLOCKS.forEach(block -> BlockRenderLayerMap.INSTANCE.putBlock(block.get(), RenderLayer.getCutout()));
         Lanterns.BLOCKS.forEach(block -> BlockRenderLayerMap.INSTANCE.putBlock(block.get(), RenderLayer.getCutout()));

@@ -1,0 +1,8 @@
+{
+  "parent": "minekea:block/furniture/display_case",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "material": "minecraft:block/stripped_crimson_stem",
+    "stripped_material": "minecraft:block/stripped_crimson_stem"
+  }
+}

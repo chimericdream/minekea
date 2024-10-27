@@ -19,8 +19,6 @@ import java.util.function.Supplier;
 import static com.chimericdream.minekea.registry.ModRegistries.registerBlockEntity;
 import static com.chimericdream.minekea.registry.ModRegistries.registerWithItem;
 
-// 
-
 public class Armoires implements ModThingGroup {
     public static final Item.Settings DEFAULT_ARMOIRE_SETTINGS = new Item.Settings().arch$tab(ModRegistries.FURNITURE_ITEM_GROUP);
 
