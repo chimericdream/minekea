@@ -6,7 +6,8 @@
     "client": [
     ],
     "mixins": [
-        "MilkBucketItemMixin"
+        "MilkBucketItemMixin",
+        "PointOfInterestTypesAccessor"
     ],
     "injectors": {
         "defaultRequire": 1

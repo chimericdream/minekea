@@ -2,6 +2,7 @@ package com.chimericdream.minekea;
 
 import com.chimericdream.minekea.network.ServerNetworking;
 import com.chimericdream.minekea.registry.ModRegistries;
+import com.chimericdream.minekea.world.poi.MinekeaPointOfInterestTypes;
 import com.google.common.base.Suppliers;
 import dev.architectury.registry.registries.RegistrarManager;
 import org.slf4j.Logger;
@@ -24,5 +25,8 @@ public final class MinekeaMod {
         ServerNetworking.init();
 
         ModRegistries.init();
+
+        LOGGER.info("Registering villager points of interest");
+        MinekeaPointOfInterestTypes.init();
     }
 }
