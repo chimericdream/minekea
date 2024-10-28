@@ -1,7 +1,7 @@
 package com.chimericdream.minekea.neoforge.client.render.item;
 
 import com.chimericdream.minekea.block.containers.ContainerBlocks;
-import com.chimericdream.minekea.client.render.GlassJarItemRendererLogic;
+import com.chimericdream.minekea.client.render.item.GlassJarItemRendererLogic;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumerProvider;

@@ -1,4 +1,4 @@
-package com.chimericdream.minekea.client.render;
+package com.chimericdream.minekea.client.render.item;
 
 import com.chimericdream.minekea.block.containers.ContainerBlocks;
 import com.chimericdream.minekea.entity.block.containers.GlassJarBlockEntity;

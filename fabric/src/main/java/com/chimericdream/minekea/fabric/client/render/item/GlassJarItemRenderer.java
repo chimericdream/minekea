@@ -1,7 +1,7 @@
 package com.chimericdream.minekea.fabric.client.render.item;
 
 import com.chimericdream.minekea.block.containers.ContainerBlocks;
-import com.chimericdream.minekea.client.render.GlassJarItemRendererLogic;
+import com.chimericdream.minekea.client.render.item.GlassJarItemRendererLogic;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.BuiltinItemRendererRegistry;
