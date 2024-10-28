@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_furniture/bookshelves/red_nether_brick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minekea:furniture/bookshelves/red_nether_brick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minekea:building/stairs/bookshelves/vertical/red_nether_brick"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_furniture/bookshelves/red_nether_brick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minekea:building/stairs/bookshelves/vertical/red_nether_brick"
+    ]
+  }
+}

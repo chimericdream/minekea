@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_furniture/bookshelves/purpur": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minekea:furniture/bookshelves/purpur"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minekea:building/stairs/bookshelves/vertical/purpur"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_furniture/bookshelves/purpur"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minekea:building/stairs/bookshelves/vertical/purpur"
+    ]
+  }
+}

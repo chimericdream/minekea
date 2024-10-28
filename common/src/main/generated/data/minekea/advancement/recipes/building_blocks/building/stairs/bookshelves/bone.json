@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_furniture/bookshelves/bone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minekea:furniture/bookshelves/bone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minekea:building/stairs/bookshelves/bone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_furniture/bookshelves/bone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minekea:building/stairs/bookshelves/bone"
+    ]
+  }
+}

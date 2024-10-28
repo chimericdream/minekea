@@ -1,0 +1,7 @@
+{
+  "parent": "minekea:block/building/stairs/bookshelves/vertical",
+  "textures": {
+    "material": "minecraft:block/polished_tuff",
+    "shelf": "minekea:block/furniture/bookshelves/shelf0"
+  }
+}

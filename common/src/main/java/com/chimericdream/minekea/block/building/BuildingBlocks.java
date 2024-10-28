@@ -105,6 +105,8 @@ public class BuildingBlocks implements ModThingGroup {
         BLOCKS.addAll(Slabs.VERTICAL_SLAB_BLOCKS);
         BLOCKS.addAll(Stairs.STAIRS_BLOCKS);
         BLOCKS.addAll(Stairs.VERTICAL_STAIRS_BLOCKS);
+        BLOCKS.addAll(Stairs.BOOKSHELF_STAIRS_BLOCKS);
+        BLOCKS.addAll(Stairs.VERTICAL_BOOKSHELF_STAIRS_BLOCKS);
         BLOCKS.addAll(StorageBlocks.BLOCKS);
         BLOCKS.addAll(Walls.BLOCKS);
     }

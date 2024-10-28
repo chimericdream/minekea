@@ -10,6 +10,7 @@ import com.chimericdream.minekea.block.building.general.CrimsonBasaltBricksBlock
 import com.chimericdream.minekea.block.building.general.MossyBasaltBricksBlock;
 import com.chimericdream.minekea.block.building.general.WarpedBasaltBricksBlock;
 import com.chimericdream.minekea.block.building.general.WarpedNetherBricksBlock;
+import com.chimericdream.minekea.block.furniture.bookshelves.Bookshelves;
 import com.chimericdream.minekea.util.ModThingGroup;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.block.Block;
@@ -28,6 +29,9 @@ public class Stairs implements ModThingGroup {
 
     public static final List<RegistrySupplier<Block>> STAIRS_BLOCKS = new ArrayList<>();
     public static final List<RegistrySupplier<Block>> VERTICAL_STAIRS_BLOCKS = new ArrayList<>();
+
+    public static final List<RegistrySupplier<Block>> BOOKSHELF_STAIRS_BLOCKS = new ArrayList<>();
+    public static final List<RegistrySupplier<Block>> VERTICAL_BOOKSHELF_STAIRS_BLOCKS = new ArrayList<>();
 
     static {
         STAIRS_BLOCKS.add(registerWithItem(StairsBlock.makeId("basalt_bricks"), () -> new StairsBlock(new BlockConfig().material("basalt_bricks").materialName("Basalt Brick").ingredient(BuildingBlocks.BASALT_BRICKS.get()).texture(TextureUtils.block(BasaltBricksBlock.BLOCK_ID))), DEFAULT_STAIRS_SETTINGS));
@@ -100,5 +104,21 @@ public class Stairs implements ModThingGroup {
         VERTICAL_STAIRS_BLOCKS.add(registerWithItem(VerticalStairsBlock.makeId("mossy_basalt_bricks"), () -> new VerticalStairsBlock(new BlockConfig().material("mossy_basalt_bricks").materialName("Mossy Basalt Brick").ingredient(BuildingBlocks.MOSSY_BASALT_BRICKS.get()).texture(TextureUtils.block(MossyBasaltBricksBlock.BLOCK_ID))), DEFAULT_VERTICAL_STAIRS_SETTINGS));
         VERTICAL_STAIRS_BLOCKS.add(registerWithItem(VerticalStairsBlock.makeId("warped_basalt_bricks"), () -> new VerticalStairsBlock(new BlockConfig().material("warped_basalt_bricks").materialName("Warped Basalt Brick").ingredient(BuildingBlocks.WARPED_BASALT_BRICKS.get()).texture(TextureUtils.block(WarpedBasaltBricksBlock.BLOCK_ID))), DEFAULT_VERTICAL_STAIRS_SETTINGS));
         VERTICAL_STAIRS_BLOCKS.add(registerWithItem(VerticalStairsBlock.makeId("warped_nether_bricks"), () -> new VerticalStairsBlock(new BlockConfig().material("warped_nether_bricks").materialName("Warped Nether Brick").ingredient(BuildingBlocks.WARPED_NETHER_BRICKS.get()).texture(TextureUtils.block(WarpedNetherBricksBlock.BLOCK_ID))), DEFAULT_VERTICAL_STAIRS_SETTINGS));
+
+        Bookshelves.BOOKSHELF_CONFIGS.forEach((material, config) -> {
+            BOOKSHELF_STAIRS_BLOCKS.add(
+                registerWithItem(BookshelfStairsBlock.makeId(material),
+                    () -> new BookshelfStairsBlock(config),
+                    DEFAULT_STAIRS_SETTINGS
+                )
+            );
+
+            VERTICAL_BOOKSHELF_STAIRS_BLOCKS.add(
+                registerWithItem(VerticalBookshelfStairsBlock.makeId(material),
+                    () -> new VerticalBookshelfStairsBlock(config),
+                    DEFAULT_VERTICAL_STAIRS_SETTINGS
+                )
+            );
+        });
     }
 }

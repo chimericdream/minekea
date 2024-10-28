@@ -25,6 +25,10 @@ import com.chimericdream.minekea.fabric.block.building.general.WaxBlockDataGener
 import com.chimericdream.minekea.fabric.block.building.slabs.BookshelfSlabBlockDataGenerator;
 import com.chimericdream.minekea.fabric.block.building.slabs.SlabBlockDataGenerator;
 import com.chimericdream.minekea.fabric.block.building.slabs.VerticalSlabBlockDataGenerator;
+import com.chimericdream.minekea.fabric.block.building.stairs.BookshelfStairsBlockDataGenerator;
+import com.chimericdream.minekea.fabric.block.building.stairs.StairsBlockDataGenerator;
+import com.chimericdream.minekea.fabric.block.building.stairs.VerticalBookshelfStairsBlockDataGenerator;
+import com.chimericdream.minekea.fabric.block.building.stairs.VerticalStairsBlockDataGenerator;
 import com.chimericdream.minekea.fabric.block.building.storage.DyeBlockDataGenerator;
 import com.chimericdream.minekea.fabric.block.building.storage.ItemStorageBlockDataGenerator;
 import com.chimericdream.minekea.fabric.block.building.storage.SetOfEggsBlockDataGenerator;
@@ -59,6 +63,8 @@ public class BuildingBlocksDataGenerator implements BlockDataGeneratorGroup {
         Slabs.BOOKSHELF_SLAB_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new BookshelfSlabBlockDataGenerator(block.get())));
         Stairs.STAIRS_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new StairsBlockDataGenerator(block.get())));
         Stairs.VERTICAL_STAIRS_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new VerticalStairsBlockDataGenerator(block.get())));
+        Stairs.BOOKSHELF_STAIRS_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new BookshelfStairsBlockDataGenerator(block.get())));
+        Stairs.VERTICAL_BOOKSHELF_STAIRS_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new VerticalBookshelfStairsBlockDataGenerator(block.get())));
         StorageBlocks.STORAGE_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new ItemStorageBlockDataGenerator(block.get())));
         StorageBlocks.DYE_BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new DyeBlockDataGenerator(block.get())));
         Walls.BLOCKS.forEach(block -> BLOCK_GENERATORS.add(new WallBlockDataGenerator(block.get())));

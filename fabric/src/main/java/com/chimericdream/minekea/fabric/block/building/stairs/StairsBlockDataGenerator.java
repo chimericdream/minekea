@@ -1,4 +1,4 @@
-package com.chimericdream.minekea.fabric.block.building;
+package com.chimericdream.minekea.fabric.block.building.stairs;
 
 import com.chimericdream.lib.fabric.blocks.FabricBlockDataGenerator;
 import com.chimericdream.lib.util.Tool;

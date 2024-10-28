@@ -67,7 +67,7 @@ public class VerticalSlabBlockDataGenerator implements FabricBlockDataGenerator 
     }
 
     public void configureTranslations(RegistryWrapper.WrapperLookup registryLookup, FabricLanguageProvider.TranslationBuilder translationBuilder) {
-        translationBuilder.add(BLOCK, String.format("%s Vertical Slab", BLOCK.config.getMaterialName()));
+        translationBuilder.add(BLOCK, String.format("Vertical %s Slab", BLOCK.config.getMaterialName()));
     }
 
     public void configureBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {

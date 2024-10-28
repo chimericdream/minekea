@@ -5,7 +5,7 @@ import com.chimericdream.minekea.ModInfo;
 import net.minecraft.util.Identifier;
 
 public class StairsBlock extends net.minecraft.block.StairsBlock {
-    public final Identifier BLOCK_ID;
+    public Identifier BLOCK_ID;
     public final BlockConfig config;
 
     public StairsBlock(BlockConfig config) {

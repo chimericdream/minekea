@@ -46,7 +46,7 @@ public class VerticalStairsBlock extends Block implements Waterloggable {
         FACING = Properties.HORIZONTAL_FACING;
     }
 
-    public final Identifier BLOCK_ID;
+    public Identifier BLOCK_ID;
     public final BlockConfig config;
 
     public VerticalStairsBlock(BlockConfig config) {

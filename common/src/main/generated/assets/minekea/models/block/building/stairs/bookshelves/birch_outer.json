@@ -1,0 +1,7 @@
+{
+  "parent": "minekea:block/building/stairs/bookshelves/outer",
+  "textures": {
+    "material": "minecraft:block/birch_planks",
+    "shelf": "minekea:block/furniture/bookshelves/shelf0"
+  }
+}
