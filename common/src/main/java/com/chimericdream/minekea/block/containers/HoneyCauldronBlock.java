@@ -22,6 +22,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.event.GameEvent;
 
@@ -130,5 +131,10 @@ public class HoneyCauldronBlock extends LeveledCauldronBlock {
                 ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 15));
             }
         }
+    }
+
+    @Override
+    public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
+        return Items.CAULDRON.getDefaultStack();
     }
 }

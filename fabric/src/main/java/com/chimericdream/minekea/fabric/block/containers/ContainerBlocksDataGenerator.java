@@ -18,6 +18,7 @@ public class ContainerBlocksDataGenerator implements BlockDataGeneratorGroup {
 
         BLOCK_GENERATORS.add(new BarrelBlockDataGenerator.OakBarrelDataGenerator());
         BLOCK_GENERATORS.add(new CrateBlockDataGenerator.SharedCrateDataGenerator());
+        BLOCK_GENERATORS.add(new GlassJarBlockDataGenerator());
     }
 
     @Override

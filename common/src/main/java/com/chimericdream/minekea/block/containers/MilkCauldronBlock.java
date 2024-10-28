@@ -16,6 +16,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 
 import static net.minecraft.block.cauldron.CauldronBehavior.createMap;
 import static net.minecraft.block.cauldron.CauldronBehavior.emptyCauldron;
@@ -93,5 +94,10 @@ public class MilkCauldronBlock extends AbstractCauldronBlock {
 
     public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
         return 3;
+    }
+
+    @Override
+    public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
+        return Items.CAULDRON.getDefaultStack();
     }
 }

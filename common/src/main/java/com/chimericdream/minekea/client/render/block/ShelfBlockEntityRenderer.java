@@ -1,5 +1,6 @@
 package com.chimericdream.minekea.client.render.block;
 
+import com.chimericdream.minekea.block.containers.ContainerBlocks;
 import com.chimericdream.minekea.block.furniture.shelves.ShelfBlock;
 import com.chimericdream.minekea.entity.block.furniture.ShelfBlockEntity;
 import com.chimericdream.minekea.tag.MinekeaItemTags;
@@ -43,8 +44,7 @@ public class ShelfBlockEntityRenderer<T extends ShelfBlockEntity> implements Blo
     }
 
     private boolean isJarItem(ItemStack stack) {
-        return false;
-//        return stack.isOf(ContainerBlocks.GLASS_JAR.asItem());
+        return stack.isOf(ContainerBlocks.GLASS_JAR.get().asItem());
     }
 
     @Override
