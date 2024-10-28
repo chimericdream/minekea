@@ -29,7 +29,7 @@ public class VerticalSlabBlock extends Block implements Waterloggable {
     public static final VoxelShape EAST_SHAPE = Block.createCuboidShape(8.0, 0.0, 0.0, 16.0, 16.0, 16.0);
     public static final VoxelShape WEST_SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 8.0, 16.0, 16.0);
 
-    public final Identifier BLOCK_ID;
+    public Identifier BLOCK_ID;
     public final BlockConfig config;
 
     static {
