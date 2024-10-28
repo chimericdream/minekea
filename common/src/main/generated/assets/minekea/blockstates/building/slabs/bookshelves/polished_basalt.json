@@ -1,0 +1,28 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "minekea:block/building/slabs/bookshelves/polished_basalt"
+      },
+      "when": {
+        "type": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "minekea:block/building/slabs/bookshelves/polished_basalt_top"
+      },
+      "when": {
+        "type": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "minekea:block/building/slabs/bookshelves/polished_basalt_double"
+      },
+      "when": {
+        "type": "double"
+      }
+    }
+  ]
+}

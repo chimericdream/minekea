@@ -1,6 +1,7 @@
 package com.chimericdream.minekea.fabric.block.furniture;
 
 import com.chimericdream.lib.fabric.blocks.FabricBlockDataGenerator;
+import com.chimericdream.lib.util.Tool;
 import com.chimericdream.minekea.ModInfo;
 import com.chimericdream.minekea.block.furniture.bookshelves.BookshelfBlock;
 import com.chimericdream.minekea.resource.MinekeaTextures;
@@ -29,22 +30,26 @@ import java.util.Optional;
 import java.util.function.Function;
 
 public class BookshelfBlockDataGenerator implements FabricBlockDataGenerator {
-    protected final BookshelfBlock BLOCK;
-
-    public BookshelfBlockDataGenerator(Block block) {
-        BLOCK = (BookshelfBlock) block;
-    }
-
-    protected static final Model BOOKSHELF_MODEL = new Model(
+    public static final Model BOOKSHELF_MODEL = new Model(
         Optional.of(Identifier.of(ModInfo.MOD_ID, "block/furniture/bookshelves/bookshelf")),
         Optional.empty(),
         MinekeaTextures.MATERIAL,
         MinekeaTextures.SHELF
     );
 
+    protected final BookshelfBlock BLOCK;
+
+    public BookshelfBlockDataGenerator(Block block) {
+        BLOCK = (BookshelfBlock) block;
+    }
+
     public void configureBlockTags(RegistryWrapper.WrapperLookup registryLookup, Function<TagKey<Block>, FabricTagProvider<Block>.FabricTagBuilder> getBuilder) {
         getBuilder.apply(BlockTags.ENCHANTMENT_POWER_PROVIDER).setReplace(false).add(BLOCK);
-        getBuilder.apply(BlockTags.AXE_MINEABLE).setReplace(false).add(BLOCK);
+
+        Tool tool = Optional.ofNullable(BLOCK.config.getTool()).orElse(Tool.PICKAXE);
+        getBuilder.apply(tool.getMineableTag())
+            .setReplace(false)
+            .add(BLOCK);
     }
 
     public void configureRecipes(RecipeExporter exporter) {

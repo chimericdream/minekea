@@ -1,0 +1,28 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "minekea:block/building/slabs/bookshelves/crimson"
+      },
+      "when": {
+        "type": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "minekea:block/building/slabs/bookshelves/crimson_top"
+      },
+      "when": {
+        "type": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "minekea:block/building/slabs/bookshelves/crimson_double"
+      },
+      "when": {
+        "type": "double"
+      }
+    }
+  ]
+}

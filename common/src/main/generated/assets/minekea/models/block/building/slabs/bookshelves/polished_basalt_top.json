@@ -1,0 +1,7 @@
+{
+  "parent": "minekea:block/building/slabs/bookshelves/top",
+  "textures": {
+    "material": "minecraft:block/polished_basalt_top",
+    "shelf": "minekea:block/furniture/bookshelves/shelf0"
+  }
+}

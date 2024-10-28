@@ -3,6 +3,7 @@ package com.chimericdream.minekea.fabric.block.building.storage;
 import com.chimericdream.lib.blocks.BlockConfig;
 import com.chimericdream.lib.fabric.blocks.FabricBlockDataGenerator;
 import com.chimericdream.lib.resource.TextureUtils;
+import com.chimericdream.lib.util.Tool;
 import com.chimericdream.minekea.ModInfo;
 import com.chimericdream.minekea.block.building.storage.ItemStorageBlock;
 import com.chimericdream.minekea.fabric.data.blockstate.suppliers.CustomBlockStateModelSupplier;
@@ -49,11 +50,6 @@ public class ItemStorageBlockDataGenerator implements FabricBlockDataGenerator {
         this.BLOCK = (ItemStorageBlock) block;
     }
 
-//    public void register() {
-//        RegistryHelpers.registerBlockWithItem(this, BLOCK_ID);
-//        FabricItemGroupEventHelpers.addBlockToItemGroup(this, ItemGroups.BUILDING_BLOCKS);
-//    }
-
     protected static Model makeCubeModel(BlockConfig.RenderType renderType) {
         return new CustomBlockStateModelSupplier.CustomBlockModel(
             renderType,
@@ -81,6 +77,14 @@ public class ItemStorageBlockDataGenerator implements FabricBlockDataGenerator {
             Optional.empty(),
             MinekeaTextures.CONTENTS
         );
+    }
+
+    @Override
+    public void configureBlockTags(RegistryWrapper.WrapperLookup registryLookup, Function<TagKey<Block>, FabricTagProvider<Block>.FabricTagBuilder> getBuilder) {
+        Tool tool = Optional.ofNullable(BLOCK.config.getTool()).orElse(Tool.PICKAXE);
+        getBuilder.apply(tool.getMineableTag())
+            .setReplace(false)
+            .add(BLOCK);
     }
 
     @Override

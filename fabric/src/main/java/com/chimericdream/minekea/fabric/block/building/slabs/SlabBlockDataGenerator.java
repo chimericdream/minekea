@@ -1,4 +1,4 @@
-package com.chimericdream.minekea.fabric.block.building;
+package com.chimericdream.minekea.fabric.block.building.slabs;
 
 import com.chimericdream.lib.fabric.blocks.FabricBlockDataGenerator;
 import com.chimericdream.lib.util.Tool;
@@ -33,15 +33,6 @@ public class SlabBlockDataGenerator implements FabricBlockDataGenerator {
     public SlabBlockDataGenerator(Block block) {
         this.BLOCK = (SlabBlock) block;
     }
-
-//    public void register() {
-//        RegistryHelpers.registerBlockWithItem(this, BLOCK_ID);
-//        FabricItemGroupEventHelpers.addBlockToItemGroup(this, ItemGroups.BUILDING_BLOCKS);
-//
-//        if (config.isFlammable()) {
-//            FabricRegistryHelpers.registerFlammableBlock(this);
-//        }
-//    }
 
     public void configureBlockTags(RegistryWrapper.WrapperLookup registryLookup, Function<TagKey<Block>, FabricTagProvider<Block>.FabricTagBuilder> getBuilder) {
         Tool tool = Optional.ofNullable(BLOCK.config.getTool()).orElse(Tool.PICKAXE);

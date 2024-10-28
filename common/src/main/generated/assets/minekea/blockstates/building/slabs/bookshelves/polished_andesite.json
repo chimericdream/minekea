@@ -1,0 +1,28 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "minekea:block/building/slabs/bookshelves/polished_andesite"
+      },
+      "when": {
+        "type": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "minekea:block/building/slabs/bookshelves/polished_andesite_top"
+      },
+      "when": {
+        "type": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "minekea:block/building/slabs/bookshelves/polished_andesite_double"
+      },
+      "when": {
+        "type": "double"
+      }
+    }
+  ]
+}

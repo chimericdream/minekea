@@ -1,6 +1,7 @@
 package com.chimericdream.minekea.fabric.block.furniture;
 
 import com.chimericdream.lib.fabric.blocks.FabricBlockDataGenerator;
+import com.chimericdream.lib.util.Tool;
 import com.chimericdream.minekea.ModInfo;
 import com.chimericdream.minekea.block.furniture.seats.StoolBlock;
 import com.chimericdream.minekea.resource.MinekeaTextures;
@@ -17,7 +18,6 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
@@ -38,15 +38,6 @@ public class StoolBlockDataGenerator implements FabricBlockDataGenerator {
         this.BLOCK = (StoolBlock) block;
     }
 
-//    public void register() {
-//        RegistryHelpers.registerBlockWithItem(this, BLOCK_ID);
-//        FabricItemGroupEventHelpers.addBlockToItemGroup(this, FURNITURE_ITEM_GROUP_KEY);
-//
-//        if (config.isFlammable()) {
-//            FabricRegistryHelpers.registerFlammableBlock(this);
-//        }
-//    }
-
     public void configureRecipes(RecipeExporter exporter) {
         Block plankIngredient = BLOCK.config.getIngredient();
         Block logIngredient = BLOCK.config.getIngredient("log");
@@ -64,7 +55,10 @@ public class StoolBlockDataGenerator implements FabricBlockDataGenerator {
     }
 
     public void configureBlockTags(RegistryWrapper.WrapperLookup registryLookup, Function<TagKey<Block>, FabricTagProvider<Block>.FabricTagBuilder> getBuilder) {
-        getBuilder.apply(BlockTags.AXE_MINEABLE).setReplace(false).add(BLOCK);
+        Tool tool = Optional.ofNullable(BLOCK.config.getTool()).orElse(Tool.AXE);
+        getBuilder.apply(tool.getMineableTag())
+            .setReplace(false)
+            .add(BLOCK);
     }
 
     public void configureTranslations(RegistryWrapper.WrapperLookup registryLookup, FabricLanguageProvider.TranslationBuilder translationBuilder) {

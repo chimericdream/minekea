@@ -41,15 +41,6 @@ public class CoverBlockDataGenerator implements FabricBlockDataGenerator {
         BLOCK = (CoverBlock) block;
     }
 
-//    public void register() {
-//        RegistryHelpers.registerBlockWithItem(this, BLOCK_ID);
-//        FabricItemGroupEventHelpers.addBlockToItemGroup(this, MinekeaItemGroups.COVERS_ITEM_GROUP_KEY);
-//
-//        if (config.isFlammable()) {
-//            FabricRegistryHelpers.registerFlammableBlock(this);
-//        }
-//    }
-
     public void configureBlockTags(RegistryWrapper.WrapperLookup registryLookup, Function<TagKey<Block>, FabricTagProvider<Block>.FabricTagBuilder> getBuilder) {
         Tool tool = Optional.ofNullable(BLOCK.config.getTool()).orElse(Tool.PICKAXE);
         getBuilder.apply(tool.getMineableTag())

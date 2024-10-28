@@ -31,15 +31,6 @@ public class WallBlockDataGenerator implements FabricBlockDataGenerator {
         BLOCK = (WallBlock) block;
     }
 
-//    public void register() {
-//        RegistryHelpers.registerBlockWithItem(BLOCK, BLOCK_ID);
-//        FabricItemGroupEventHelpers.addBlockToItemGroup(BLOCK, ItemGroups.BUILDING_BLOCKS);
-//
-//        if (config.isFlammable()) {
-//            FabricRegistryHelpers.registerFlammableBlock(BLOCK);
-//        }
-//    }
-
     public void configureBlockTags(RegistryWrapper.WrapperLookup registryLookup, Function<TagKey<Block>, FabricTagProvider<Block>.FabricTagBuilder> getBuilder) {
         getBuilder.apply(BlockTags.WALLS)
             .setReplace(false)

@@ -27,14 +27,6 @@ public class PillowBlockDataGenerator implements FabricBlockDataGenerator {
         BLOCK = (PillowBlock) block;
     }
 
-//    public void register() {
-//        RegistryHelpers.registerBlockWithItem(this, BLOCK_ID);
-//        FabricItemGroupEventHelpers.addBlockToItemGroups(
-//            this,
-//            List.of(ItemGroups.COLORED_BLOCKS, FURNITURE_ITEM_GROUP_KEY)
-//        );
-//    }
-
     public void configureBlockTags(RegistryWrapper.WrapperLookup registryLookup, Function<TagKey<Block>, FabricTagProvider<Block>.FabricTagBuilder> getBuilder) {
         getBuilder.apply(MinekeaBlockTags.PILLOWS)
             .setReplace(false)

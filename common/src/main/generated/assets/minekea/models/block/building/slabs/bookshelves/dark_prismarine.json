@@ -1,0 +1,7 @@
+{
+  "parent": "minekea:block/building/slabs/bookshelves/bottom",
+  "textures": {
+    "material": "minecraft:block/dark_prismarine",
+    "shelf": "minekea:block/furniture/bookshelves/shelf0"
+  }
+}

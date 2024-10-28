@@ -1,6 +1,7 @@
 package com.chimericdream.minekea.fabric.block.furniture;
 
 import com.chimericdream.lib.fabric.blocks.FabricBlockDataGenerator;
+import com.chimericdream.lib.util.Tool;
 import com.chimericdream.minekea.ModInfo;
 import com.chimericdream.minekea.block.furniture.shelves.ShelfBlock;
 import com.chimericdream.minekea.fabric.data.model.ModelUtils;
@@ -18,7 +19,6 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
@@ -45,7 +45,10 @@ public class ShelfBlockDataGenerator implements FabricBlockDataGenerator {
     }
 
     public void configureBlockTags(RegistryWrapper.WrapperLookup registryLookup, Function<TagKey<Block>, FabricTagProvider<Block>.FabricTagBuilder> getBuilder) {
-        getBuilder.apply(BlockTags.AXE_MINEABLE).setReplace(false).add(BLOCK);
+        Tool tool = Optional.ofNullable(BLOCK.config.getTool()).orElse(Tool.AXE);
+        getBuilder.apply(tool.getMineableTag())
+            .setReplace(false)
+            .add(BLOCK);
     }
 
     public void configureRecipes(RecipeExporter exporter) {

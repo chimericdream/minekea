@@ -41,15 +41,6 @@ public class VerticalStairsBlockDataGenerator implements FabricBlockDataGenerato
         BLOCK = (VerticalStairsBlock) block;
     }
 
-//    public void register() {
-//        RegistryHelpers.registerBlockWithItem(this, BLOCK_ID);
-//        FabricItemGroupEventHelpers.addBlockToItemGroup(this, ItemGroups.BUILDING_BLOCKS);
-//
-//        if (config.isFlammable()) {
-//            FabricRegistryHelpers.registerFlammableBlock(this);
-//        }
-//    }
-
     public void configureBlockTags(RegistryWrapper.WrapperLookup registryLookup, Function<TagKey<Block>, FabricTagProvider<Block>.FabricTagBuilder> getBuilder) {
         Tool tool = Optional.ofNullable(BLOCK.config.getTool()).orElse(Tool.PICKAXE);
         getBuilder.apply(tool.getMineableTag())

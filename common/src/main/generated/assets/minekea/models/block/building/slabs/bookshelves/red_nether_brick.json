@@ -1,0 +1,7 @@
+{
+  "parent": "minekea:block/building/slabs/bookshelves/bottom",
+  "textures": {
+    "material": "minecraft:block/red_nether_bricks",
+    "shelf": "minekea:block/furniture/bookshelves/shelf0"
+  }
+}

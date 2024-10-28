@@ -26,11 +26,6 @@ public class SetOfEggsBlockDataGenerator implements FabricBlockDataGenerator {
         BLOCK = (SetOfEggsBlock) StorageBlocks.SET_OF_EGGS_BLOCK.get();
     }
 
-//    public void register() {
-//        RegistryHelpers.registerBlockWithItem(BLOCK, SetOfEggsBlock.BLOCK_ID);
-//        FabricItemGroupEventHelpers.addBlockToItemGroup(BLOCK, ItemGroups.BUILDING_BLOCKS);
-//    }
-
     public void configureBlockTags(RegistryWrapper.WrapperLookup registryLookup, Function<TagKey<Block>, FabricTagProvider<Block>.FabricTagBuilder> getBuilder) {
         getBuilder.apply(BlockTags.HOE_MINEABLE)
             .setReplace(false)

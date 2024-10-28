@@ -10,6 +10,7 @@ import com.chimericdream.minekea.block.building.general.CrimsonBasaltBricksBlock
 import com.chimericdream.minekea.block.building.general.MossyBasaltBricksBlock;
 import com.chimericdream.minekea.block.building.general.WarpedBasaltBricksBlock;
 import com.chimericdream.minekea.block.building.general.WarpedNetherBricksBlock;
+import com.chimericdream.minekea.block.furniture.bookshelves.Bookshelves;
 import com.chimericdream.minekea.util.ModThingGroup;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.block.Block;
@@ -28,6 +29,7 @@ public class Slabs implements ModThingGroup {
 
     public static final List<RegistrySupplier<Block>> SLAB_BLOCKS = new ArrayList<>();
     public static final List<RegistrySupplier<Block>> VERTICAL_SLAB_BLOCKS = new ArrayList<>();
+    public static final List<RegistrySupplier<Block>> BOOKSHELF_SLAB_BLOCKS = new ArrayList<>();
 
     static {
         SLAB_BLOCKS.add(registerWithItem(SlabBlock.makeId("basalt_bricks"), () -> new SlabBlock(new BlockConfig().material("basalt_bricks").materialName("Basalt Brick").ingredient(BuildingBlocks.BASALT_BRICKS.get()).texture(TextureUtils.block(BasaltBricksBlock.BLOCK_ID))), DEFAULT_SLAB_SETTINGS));
@@ -36,6 +38,15 @@ public class Slabs implements ModThingGroup {
         SLAB_BLOCKS.add(registerWithItem(SlabBlock.makeId("mossy_basalt_bricks"), () -> new SlabBlock(new BlockConfig().material("mossy_basalt_bricks").materialName("Mossy Basalt Brick").ingredient(BuildingBlocks.MOSSY_BASALT_BRICKS.get()).texture(TextureUtils.block(MossyBasaltBricksBlock.BLOCK_ID))), DEFAULT_SLAB_SETTINGS));
         SLAB_BLOCKS.add(registerWithItem(SlabBlock.makeId("warped_basalt_bricks"), () -> new SlabBlock(new BlockConfig().material("warped_basalt_bricks").materialName("Warped Basalt Brick").ingredient(BuildingBlocks.WARPED_BASALT_BRICKS.get()).texture(TextureUtils.block(WarpedBasaltBricksBlock.BLOCK_ID))), DEFAULT_SLAB_SETTINGS));
         SLAB_BLOCKS.add(registerWithItem(SlabBlock.makeId("warped_nether_bricks"), () -> new SlabBlock(new BlockConfig().material("warped_nether_bricks").materialName("Warped Nether Brick").ingredient(BuildingBlocks.WARPED_NETHER_BRICKS.get()).texture(TextureUtils.block(WarpedNetherBricksBlock.BLOCK_ID))), DEFAULT_SLAB_SETTINGS));
+
+        Bookshelves.BOOKSHELF_CONFIGS.forEach((material, config) -> {
+            BOOKSHELF_SLAB_BLOCKS.add(
+                registerWithItem(BookshelfSlabBlock.makeId(material),
+                    () -> new BookshelfSlabBlock(config),
+                    DEFAULT_SLAB_SETTINGS
+                )
+            );
+        });
 
         VERTICAL_SLAB_BLOCKS.add(registerWithItem(VerticalSlabBlock.makeId("acacia"), () -> new VerticalSlabBlock(new BlockConfig().material("acacia").materialName("Acacia").ingredient(Blocks.ACACIA_PLANKS).tool(Tool.AXE)), DEFAULT_VERTICAL_SLAB_SETTINGS));
         VERTICAL_SLAB_BLOCKS.add(registerWithItem(VerticalSlabBlock.makeId("bamboo_planks"), () -> new VerticalSlabBlock(new BlockConfig().material("bamboo_planks").materialName("Bamboo").ingredient(Blocks.BAMBOO_PLANKS).tool(Tool.AXE)), DEFAULT_VERTICAL_SLAB_SETTINGS));

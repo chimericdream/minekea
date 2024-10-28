@@ -25,7 +25,9 @@ public final class MinekeaMod {
         ServerNetworking.init();
 
         ModRegistries.init();
+    }
 
+    public static void initVillagerPois() {
         LOGGER.info("Registering villager points of interest");
         MinekeaPointOfInterestTypes.init();
     }

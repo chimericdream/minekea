@@ -11,5 +11,7 @@ public final class MinekeaFabric implements ModInitializer {
 
         MinekeaMod.LOGGER.info("Initializing Fabric server networking");
         FabricServerNetworking.init();
+
+        MinekeaMod.initVillagerPois();
     }
 }
