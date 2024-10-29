@@ -1,0 +1,30 @@
+{
+    "name": "Crates",
+    "icon": "minekea:containers/crates/oak",
+    "category": "minekea:containers_and_storage",
+    "read_by_default": true,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Crates are reinforced containers which can store the same amount of items as a double chest. They are available in all wood types.$(br2)$(br2)$(o)Twice the storage, half the space, barely over twice the price!"
+        },
+        {
+            "type": "patchouli:crafting",
+            "recipe": "minekea:containers/crates/oak",
+            "recipe2": "minekea:containers/crates/warped",
+            "title": "Example Recipes"
+        },
+        {
+            "type": "patchouli:crafting",
+            "recipe": "minekea:containers/crates/trapped/dark_oak",
+            "text": "Trapped crates can be crafted using a crate and a tripwire hook, much the same as a trapped chest."
+        },
+        {
+            "type": "patchouli:image",
+            "images": [
+                "minekea:textures/gui/patchouli/double_crates.png"
+            ],
+            "text": "Two crates or trapped crates of the same type can connect to form a large crate."
+        }
+    ]
+}

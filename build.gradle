@@ -42,6 +42,8 @@ subprojects {
             }
         }
 
+        maven { url 'https://maven.blamejared.com' }
+
         mavenLocal()
     }
 

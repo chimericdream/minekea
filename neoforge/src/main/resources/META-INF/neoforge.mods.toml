@@ -1,15 +1,15 @@
 modLoader = "javafml"
 loaderVersion = "[4,)"
-#issueTrackerURL = ""
+issueTrackerURL = "https://github.com/chimericdream/minekea-fabric/issues"
 license = "Insert License Here"
 
 [[mods]]
 modId = "minekea"
 version = "${version}"
 displayName = "Minekea"
-authors = "Me!"
+authors = "chimericdream"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+Simple, functional, decorative blocks for all your building and storage needs (some assembly required)
 '''
 #logoFile = ""
 
@@ -34,5 +34,15 @@ versionRange = "[13.0.2,)"
 ordering = "AFTER"
 side = "BOTH"
 
+[[dependencies.minekea]]
+modId = "patchouli"
+type = "optional"
+versionRange = "[1.21-87,)"
+ordering = "AFTER"
+side = "BOTH"
+
 [[mixins]]
 config = "minekea.mixins.json"
+
+[[accessTransformers]]
+file="META-INF/accesstransformer.cfg"

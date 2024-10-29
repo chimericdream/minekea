@@ -1,0 +1,23 @@
+{
+    "name": "New Lanterns",
+    "icon": "minekea:decorations/lighting/doom_lantern",
+    "category": "minekea:decorative_blocks",
+    "read_by_default": true,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "These lamps do not provide any functional difference to their vanilla counterparts, but they certainly help when you need just the right ambiance for a build!"
+        },
+        {
+            "type": "patchouli:crafting",
+            "recipe": "minekea:decorations/lighting/ancient_lantern",
+            "recipe2": "minekea:decorations/lighting/doom_lantern",
+            "title": "Recipes"
+        },
+        {
+            "type": "patchouli:crafting",
+            "recipe": "minekea:decorations/lighting/end_lantern",
+            "title": "Recipes"
+        }
+    ]
+}

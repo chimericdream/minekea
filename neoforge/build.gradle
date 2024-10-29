@@ -45,6 +45,8 @@ dependencies {
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
 
     modImplementation "com.chimericdream.lib:chimericlib-neoforge:${rootProject.chimericlib_version}"
+
+    modImplementation "vazkii.patchouli:Patchouli:${rootProject.patchouli_version}-NEOFORGE"
 }
 
 processResources {
@@ -61,5 +63,6 @@ shadowJar {
 }
 
 remapJar {
+    atAccessWideners.add("minekea.accesswidener")
     input.set shadowJar.archiveFile
 }
