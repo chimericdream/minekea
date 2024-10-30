@@ -78,21 +78,21 @@ public class StorageBlocks implements ModThingGroup {
 
     static {
         WHITE_DYE_BLOCK = registerWithItem(DyeBlock.makeId("white"), () -> new DyeBlock("white"), DEFAULT_DYE_BLOCK_SETTINGS);
+        LIGHT_GRAY_DYE_BLOCK = registerWithItem(DyeBlock.makeId("light_gray"), () -> new DyeBlock("light_gray"), DEFAULT_DYE_BLOCK_SETTINGS);
+        GRAY_DYE_BLOCK = registerWithItem(DyeBlock.makeId("gray"), () -> new DyeBlock("gray"), DEFAULT_DYE_BLOCK_SETTINGS);
+        BLACK_DYE_BLOCK = registerWithItem(DyeBlock.makeId("black"), () -> new DyeBlock("black"), DEFAULT_DYE_BLOCK_SETTINGS);
+        BROWN_DYE_BLOCK = registerWithItem(DyeBlock.makeId("brown"), () -> new DyeBlock("brown"), DEFAULT_DYE_BLOCK_SETTINGS);
+        RED_DYE_BLOCK = registerWithItem(DyeBlock.makeId("red"), () -> new DyeBlock("red"), DEFAULT_DYE_BLOCK_SETTINGS);
         ORANGE_DYE_BLOCK = registerWithItem(DyeBlock.makeId("orange"), () -> new DyeBlock("orange"), DEFAULT_DYE_BLOCK_SETTINGS);
-        MAGENTA_DYE_BLOCK = registerWithItem(DyeBlock.makeId("magenta"), () -> new DyeBlock("magenta"), DEFAULT_DYE_BLOCK_SETTINGS);
-        LIGHT_BLUE_DYE_BLOCK = registerWithItem(DyeBlock.makeId("light_blue"), () -> new DyeBlock("light_blue"), DEFAULT_DYE_BLOCK_SETTINGS);
         YELLOW_DYE_BLOCK = registerWithItem(DyeBlock.makeId("yellow"), () -> new DyeBlock("yellow"), DEFAULT_DYE_BLOCK_SETTINGS);
         LIME_DYE_BLOCK = registerWithItem(DyeBlock.makeId("lime"), () -> new DyeBlock("lime"), DEFAULT_DYE_BLOCK_SETTINGS);
-        PINK_DYE_BLOCK = registerWithItem(DyeBlock.makeId("pink"), () -> new DyeBlock("pink"), DEFAULT_DYE_BLOCK_SETTINGS);
-        GRAY_DYE_BLOCK = registerWithItem(DyeBlock.makeId("gray"), () -> new DyeBlock("gray"), DEFAULT_DYE_BLOCK_SETTINGS);
-        LIGHT_GRAY_DYE_BLOCK = registerWithItem(DyeBlock.makeId("light_gray"), () -> new DyeBlock("light_gray"), DEFAULT_DYE_BLOCK_SETTINGS);
-        CYAN_DYE_BLOCK = registerWithItem(DyeBlock.makeId("cyan"), () -> new DyeBlock("cyan"), DEFAULT_DYE_BLOCK_SETTINGS);
-        PURPLE_DYE_BLOCK = registerWithItem(DyeBlock.makeId("purple"), () -> new DyeBlock("purple"), DEFAULT_DYE_BLOCK_SETTINGS);
-        BLUE_DYE_BLOCK = registerWithItem(DyeBlock.makeId("blue"), () -> new DyeBlock("blue"), DEFAULT_DYE_BLOCK_SETTINGS);
-        BROWN_DYE_BLOCK = registerWithItem(DyeBlock.makeId("brown"), () -> new DyeBlock("brown"), DEFAULT_DYE_BLOCK_SETTINGS);
         GREEN_DYE_BLOCK = registerWithItem(DyeBlock.makeId("green"), () -> new DyeBlock("green"), DEFAULT_DYE_BLOCK_SETTINGS);
-        RED_DYE_BLOCK = registerWithItem(DyeBlock.makeId("red"), () -> new DyeBlock("red"), DEFAULT_DYE_BLOCK_SETTINGS);
-        BLACK_DYE_BLOCK = registerWithItem(DyeBlock.makeId("black"), () -> new DyeBlock("black"), DEFAULT_DYE_BLOCK_SETTINGS);
+        CYAN_DYE_BLOCK = registerWithItem(DyeBlock.makeId("cyan"), () -> new DyeBlock("cyan"), DEFAULT_DYE_BLOCK_SETTINGS);
+        LIGHT_BLUE_DYE_BLOCK = registerWithItem(DyeBlock.makeId("light_blue"), () -> new DyeBlock("light_blue"), DEFAULT_DYE_BLOCK_SETTINGS);
+        BLUE_DYE_BLOCK = registerWithItem(DyeBlock.makeId("blue"), () -> new DyeBlock("blue"), DEFAULT_DYE_BLOCK_SETTINGS);
+        PURPLE_DYE_BLOCK = registerWithItem(DyeBlock.makeId("purple"), () -> new DyeBlock("purple"), DEFAULT_DYE_BLOCK_SETTINGS);
+        MAGENTA_DYE_BLOCK = registerWithItem(DyeBlock.makeId("magenta"), () -> new DyeBlock("magenta"), DEFAULT_DYE_BLOCK_SETTINGS);
+        PINK_DYE_BLOCK = registerWithItem(DyeBlock.makeId("pink"), () -> new DyeBlock("pink"), DEFAULT_DYE_BLOCK_SETTINGS);
 
         DYE_BLOCKS = List.of(
             WHITE_DYE_BLOCK,
