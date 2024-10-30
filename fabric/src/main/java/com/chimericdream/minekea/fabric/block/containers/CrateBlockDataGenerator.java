@@ -4,6 +4,8 @@ import com.chimericdream.lib.fabric.blocks.FabricBlockDataGenerator;
 import com.chimericdream.lib.util.Tool;
 import com.chimericdream.minekea.ModInfo;
 import com.chimericdream.minekea.block.containers.crates.CrateBlock;
+import com.chimericdream.minekea.client.screen.crate.CrateScreenHandler;
+import com.chimericdream.minekea.client.screen.crate.DoubleCrateScreenHandler;
 import com.chimericdream.minekea.resource.MinekeaTextures;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -169,10 +171,10 @@ public class CrateBlockDataGenerator implements FabricBlockDataGenerator {
 
     public static class SharedCrateDataGenerator implements FabricBlockDataGenerator {
         public void configureTranslations(RegistryWrapper.WrapperLookup registryLookup, FabricLanguageProvider.TranslationBuilder translationBuilder) {
-            translationBuilder.add(Identifier.of(ModInfo.MOD_ID, "screens/container/crate"), "Crate");
-            translationBuilder.add(Identifier.of(ModInfo.MOD_ID, "screens/container/double_crate"), "Large Crate");
-            translationBuilder.add(Identifier.of(ModInfo.MOD_ID, "screens/container/crate/trapped"), "Trapped Crate");
-            translationBuilder.add(Identifier.of(ModInfo.MOD_ID, "screens/container/double_crate/trapped"), "Trapped Large Crate");
+            translationBuilder.add(CrateScreenHandler.SCREEN_ID, "Crate");
+            translationBuilder.add(DoubleCrateScreenHandler.SCREEN_ID, "Large Crate");
+            translationBuilder.add(CrateScreenHandler.TRAPPED_SCREEN_ID, "Trapped Crate");
+            translationBuilder.add(DoubleCrateScreenHandler.TRAPPED_SCREEN_ID, "Trapped Large Crate");
         }
     }
 }

@@ -107,10 +107,10 @@ public class CrateBlockEntity extends BlockEntity implements NamedScreenHandlerF
     @Override
     public Text getDisplayName() {
         if (this.isTrapped) {
-            return Text.translatable(CrateScreenHandler.TRAPPED_SCREEN_ID.toString());
+            return Text.translatable(CrateScreenHandler.TRAPPED_SCREEN_ID.toTranslationKey());
         }
 
-        return Text.translatable(CrateScreenHandler.SCREEN_ID.toString());
+        return Text.translatable(CrateScreenHandler.SCREEN_ID.toTranslationKey());
     }
 
     @Override

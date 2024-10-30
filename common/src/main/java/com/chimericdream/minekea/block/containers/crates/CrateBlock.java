@@ -99,10 +99,10 @@ public class CrateBlock extends BlockWithEntity {
 
                     public Text getDisplayName() {
                         if (crate1.isTrapped()) {
-                            return Text.translatable(DoubleCrateScreenHandler.TRAPPED_SCREEN_ID.toString());
+                            return Text.translatable(DoubleCrateScreenHandler.TRAPPED_SCREEN_ID.toTranslationKey());
                         }
 
-                        return Text.translatable(DoubleCrateScreenHandler.SCREEN_ID.toString());
+                        return Text.translatable(DoubleCrateScreenHandler.SCREEN_ID.toTranslationKey());
                     }
                 });
             }
