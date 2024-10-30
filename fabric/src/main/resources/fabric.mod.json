@@ -34,7 +34,7 @@
         "minecraft": "~1.21",
         "java": ">=21",
         "fabric": "*",
-        "chimericlib": "*"
+        "chimericlib": ">=2.1.0"
     },
     "recommends": {
         "patchouli": "*"

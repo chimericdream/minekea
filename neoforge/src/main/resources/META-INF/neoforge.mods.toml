@@ -35,6 +35,13 @@ ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.minekea]]
+modId = "chimericlib"
+type = "required"
+versionRange = "[2.1.0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.minekea]]
 modId = "patchouli"
 type = "optional"
 versionRange = "[1.21-87,)"
